@@ -8,8 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "format:fix": "prettier --write .",
     "preview": "vite preview",
-    "prepare": "cd .. && husky rs-react-app/.husky"
+    "prepare": "husky"
   },
   "dependencies": {
     "axios": "^1.7.9",
