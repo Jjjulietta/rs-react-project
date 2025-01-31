@@ -1,6 +1,7 @@
 import { Component, createRef } from 'react';
 import styles from './Search.module.css';
 import Button from '../Button/Button';
+import { SEARCH_VALUE } from '../../utils/constants';
 
 interface PropsState {
   value: string;
@@ -11,11 +12,14 @@ export default class Search extends Component<PropsState> {
   inputRef = createRef<HTMLInputElement>();
   onSubmit = () => {
     const input = this.inputRef?.current;
-    console.log(input?.value);
     if (input?.value) {
-      this.props.onSearch(input?.value);
+      this.props.onSearch(input?.value.trim());
+      this.setLocalStorageData(input?.value.trim());
     }
   };
+
+  setLocalStorageData = (value: string) =>
+    localStorage.setItem(SEARCH_VALUE, value);
 
   render() {
     return (
@@ -27,6 +31,7 @@ export default class Search extends Component<PropsState> {
           type="search"
           name="search"
           className={styles.input}
+          defaultValue={this.props.value}
         />
         <Button
           type="submit"
