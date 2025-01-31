@@ -1,6 +1,6 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
+import axios, { AxiosInstance } from 'axios';
 import { AllSeasonSearch, SeasonType } from '../types/apiTypes';
-import { URLS } from '../utils/constants';
+import { BASE_URL, URLS } from '../utils/constants';
 
 interface Pagination {
   pageNumber?: number;
@@ -11,11 +11,19 @@ interface Sort extends Pagination {
   sort?: string;
 }
 
+interface AxiosResponseObject {
+  data: AllSeasonSearch;
+  status: number;
+  statusText: string;
+  headers: string;
+  config: unknown;
+}
+
 export default class HttpService {
   api: AxiosInstance;
   constructor(baseURL = '') {
     this.api = axios.create({
-      baseURL: `https://stapi.co/api/${baseURL}`,
+      baseURL: BASE_URL + `/${baseURL}`,
       timeout: 10000,
     });
   }
@@ -41,7 +49,7 @@ export default class HttpService {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded';
     }
-  ): Promise<AxiosResponse> {
-    return this.api.post<AllSeasonSearch>(url, { title }, { params, headers });
+  ): Promise<AxiosResponseObject> {
+    return this.api.post(url, { title }, { params, headers });
   }
 }
