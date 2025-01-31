@@ -3,3 +3,7 @@ export const URLS = {
   PAGINATION: '/v1/rest/season/search',
   SEARCH: '/v1/rest/season/search',
 };
+
+export const SEARCH_VALUE = 'searchValue';
+
+export const BASE_URL = 'https://stapi.co/api';

@@ -62,3 +62,9 @@ export interface SearchBody {
   numberOfEpisodesFrom?: number;
   numberOfEpisodesTo?: number;
 }
+
+export enum Statuses {
+  Sucсess = 200,
+  ErrorClient = 400,
+  ErrorServer = 500,
+}
