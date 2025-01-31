@@ -1,4 +1,5 @@
 import { Component, ErrorInfo } from 'react';
+import styles from '../CardList/CardList.module.css';
 
 type Props = {
   children: React.ReactNode;
@@ -24,7 +25,7 @@ export default class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.errorMessage) {
-      return <p>{this.state.errorMessage}</p>;
+      return <p className={styles.error_template}>{this.state.errorMessage}</p>;
     }
 
     return this.props.children;

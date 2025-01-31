@@ -1,6 +1,6 @@
 .table {
-  border: 1px solid gray;
   margin-bottom: 20px;
+  box-shadow: 2px 4px 8px grey;
 }
 
 .head {
