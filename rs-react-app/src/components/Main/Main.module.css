@@ -1,0 +1,11 @@
+.btn_error {
+  padding: 5px 10px;
+  border: none;
+  background-color: rgb(100, 50, 200);
+  transition: all 0.3s;
+}
+
+.btn_error:hover {
+  background-color: red;
+  box-shadow: 2px 4px 6px blueviolet;
+}
