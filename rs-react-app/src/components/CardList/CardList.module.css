@@ -1,6 +1,10 @@
 .table {
-  margin-bottom: 20px;
+  margin: 0 auto;
   box-shadow: 2px 4px 8px grey;
+}
+
+.table_container {
+  margin-bottom: 20px;
 }
 
 .head {

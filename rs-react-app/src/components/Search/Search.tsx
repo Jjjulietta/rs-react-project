@@ -24,7 +24,7 @@ export default class Search extends Component<PropsState> {
   render() {
     return (
       <div className={styles.form}>
-        <label className={styles.label}>search</label>
+        <label className={styles.label}>search by season name</label>
 
         <input
           ref={this.inputRef}
