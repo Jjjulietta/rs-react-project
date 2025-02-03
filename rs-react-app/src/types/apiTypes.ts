@@ -2,29 +2,10 @@ export interface SeasonType {
   season: {
     uid: string;
     title: string;
-    series: {
-      uid: string;
-      title: string;
-      abbreviation: string;
-      productionStartYear: number;
-      productionEndYear: number;
-      originalRunStartDate: Date;
-      originalRunEndDate: Date;
-      seasonsCount: number;
-      episodesCount: number;
-      featureLengthEpisodesCount: number;
-      productionCompany: {
-        uid: string;
-        name: string;
-      };
-      originalBroadcaster: {
-        uid: string;
-        name: string;
-      };
-    };
+    series: SeriesType;
     seasonNumber: number;
     numberOfEpisodes: number;
-    episodes: [[]];
+    episodes: EpisodeType[];
   };
 }
 
@@ -39,16 +20,17 @@ export interface Seasons {
   };
 }
 
+export interface PaginationI {
+  pageNumber: number;
+  pageSize: number;
+  numberOfElements: number;
+  totalElements: number;
+  totalPages: number;
+  firstPage: boolean;
+  lastPage: boolean;
+}
 export interface AllSeasonSearch {
-  page: {
-    pageNumber: number;
-    pageSize: number;
-    numberOfElements: number;
-    totalElements: number;
-    totalPages: number;
-    firstPage: boolean;
-    lastPage: boolean;
-  };
+  page: PaginationI;
   sort: {
     clauses: [[]];
   };
@@ -67,4 +49,80 @@ export enum Statuses {
   Sucсess = 200,
   ErrorClient = 400,
   ErrorServer = 500,
+}
+
+export interface SeasonDetails {
+  uid: string;
+  title: string;
+  series: SeriesDetails;
+  seasonNumber: number;
+  numberOfEpisodes: number;
+  episodes: EpisodeDetails[];
+}
+
+export interface EpisodeType {
+  uid: string;
+  title: string;
+  titleGerman: string | null;
+  titleItalian: string | null;
+  titleJapanese: string | null;
+  series: {
+    uid: string;
+    title: string;
+  };
+  season: {
+    uid: string;
+    title: string;
+  };
+  seasonNumber: number;
+  episodeNumber: number;
+  productionSerialNumber: string;
+  featureLength: true;
+  stardateFrom: number | null;
+  stardateTo: number | null;
+  yearFrom: number | null;
+  yearTo: number | null;
+  usAirDate: string;
+  finalScriptDate: string | null;
+}
+
+export interface SeriesType {
+  uid: string;
+  title: string;
+  abbreviation: string;
+  productionStartYear: number | null;
+  productionEndYear: number | null;
+  originalRunStartDate: Date | null;
+  originalRunEndDate: Date | null;
+  seasonsCount: number;
+  episodesCount: number;
+  featureLengthEpisodesCount: number;
+  productionCompany: {
+    uid: string;
+    name: string;
+  };
+  originalBroadcaster: {
+    uid: string;
+    name: string;
+  };
+}
+
+export interface SeriesDetails {
+  title: string;
+  abbreviation: string;
+  productionStartYear: number | null;
+  originalRunStartDate: Date | null;
+  seasonsCount: number;
+  episodesCount: number;
+  featureLengthEpisodesCount: number;
+  productionCompanyName: string;
+  originalBroadcasterName: string;
+}
+
+export interface EpisodeDetails {
+  uid: string;
+  title: string;
+  episodeNumber: number;
+  productionSerialNumber: string;
+  usAirDate: string;
 }
