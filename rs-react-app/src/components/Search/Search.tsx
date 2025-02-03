@@ -1,6 +1,6 @@
-import { Component, createRef } from 'react';
+import { useRef } from 'react';
 import styles from './Search.module.css';
-import Button from '../Button/Button';
+import { Button } from '../Button/Button';
 import { SEARCH_VALUE } from '../../utils/constants';
 
 interface PropsState {
@@ -8,38 +8,36 @@ interface PropsState {
   onSearch: (val: string) => void;
 }
 
-export default class Search extends Component<PropsState> {
-  inputRef = createRef<HTMLInputElement>();
-  onSubmit = () => {
-    const input = this.inputRef?.current;
+export const Search = ({ value, onSearch }: PropsState) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const onSubmit = () => {
+    const input = inputRef?.current;
     if (input?.value) {
-      this.props.onSearch(input?.value.trim());
-      this.setLocalStorageData(input?.value.trim());
+      onSearch(input?.value.trim());
+      setLocalStorageData(input?.value.trim());
     }
   };
 
-  setLocalStorageData = (value: string) =>
+  const setLocalStorageData = (value: string) =>
     localStorage.setItem(SEARCH_VALUE, value);
 
-  render() {
-    return (
-      <div className={styles.form}>
-        <label className={styles.label}>search by season name</label>
+  return (
+    <div className={styles.form}>
+      <label className={styles.label}>search by season name</label>
 
-        <input
-          ref={this.inputRef}
-          type="search"
-          name="search"
-          className={styles.input}
-          defaultValue={this.props.value}
-        />
-        <Button
-          type="submit"
-          className={styles.btn}
-          name="sabmit"
-          onClick={this.onSubmit}
-        />
-      </div>
-    );
-  }
-}
+      <input
+        ref={inputRef}
+        type="search"
+        name="search"
+        className={styles.input}
+        defaultValue={value}
+      />
+      <Button
+        type="submit"
+        className={styles.btn}
+        name="sabmit"
+        onClick={onSubmit}
+      />
+    </div>
+  );
+};
