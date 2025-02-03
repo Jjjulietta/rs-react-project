@@ -1,5 +1,11 @@
 import axios, { AxiosInstance } from 'axios';
-import { AllSeasonSearch, SeasonType } from '../types/apiTypes';
+import {
+  AllSeasonSearch,
+  EpisodeDetails,
+  SeasonDetails,
+  SeasonType,
+  SeriesDetails,
+} from '../types/apiTypes';
 import { BASE_URL, URLS } from '../utils/constants';
 
 interface Pagination {
@@ -28,9 +34,54 @@ export default class HttpService {
     });
   }
 
-  async getSeason(url: string, params: { uid: string }): Promise<SeasonType> {
+  async getSeason(
+    url: string,
+    params: { uid: string }
+  ): Promise<SeasonDetails> {
     const { data } = await this.api.get<SeasonType>(url, { params });
-    return data;
+    const episodes = data.season.episodes.reduce<EpisodeDetails[]>(
+      (details, item) => {
+        details.push({
+          uid: item.uid,
+          title: item.title,
+          episodeNumber: item.episodeNumber,
+          productionSerialNumber: item.productionSerialNumber,
+          usAirDate: item.usAirDate,
+        });
+        return details;
+      },
+      []
+    );
+    const {
+      title,
+      abbreviation,
+      productionStartYear,
+      originalRunStartDate,
+      seasonsCount,
+      episodesCount,
+      featureLengthEpisodesCount,
+      productionCompany: { name: productionCompanyName },
+      originalBroadcaster: { name: originalBroadcasterName },
+    } = data.season.series;
+    const series: SeriesDetails = {
+      title,
+      abbreviation,
+      productionStartYear,
+      originalRunStartDate,
+      seasonsCount,
+      episodesCount,
+      featureLengthEpisodesCount,
+      productionCompanyName,
+      originalBroadcasterName,
+    };
+    return {
+      uid: data.season.uid,
+      title: data.season.title,
+      seasonNumber: data.season.seasonNumber,
+      series: series,
+      numberOfEpisodes: data.season.numberOfEpisodes,
+      episodes: episodes,
+    };
   }
 
   async getPagination(
@@ -38,7 +89,6 @@ export default class HttpService {
     params?: Pagination
   ): Promise<AllSeasonSearch> {
     const { data } = await this.api.get<AllSeasonSearch>(url, { params });
-    console.log(data);
     return data;
   }
 
