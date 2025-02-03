@@ -7,3 +7,16 @@ export const URLS = {
 export const SEARCH_VALUE = 'searchValue';
 
 export const BASE_URL = 'https://stapi.co/api';
+
+export const PAGE_SIZE = 6;
+export const FIRST_PAGE = 0;
+
+export const PAGINATION_DEFAULT = {
+  pageNumber: FIRST_PAGE + 1,
+  pageSize: PAGE_SIZE,
+  numberOfElements: 0,
+  totalElements: 0,
+  totalPages: 0,
+  firstPage: true,
+  lastPage: true,
+};
