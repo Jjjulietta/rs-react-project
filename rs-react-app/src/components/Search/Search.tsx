@@ -2,24 +2,23 @@ import { useRef } from 'react';
 import styles from './Search.module.css';
 import { Button } from '../Button/Button';
 import { SEARCH_VALUE } from '../../utils/constants';
+import { useLocalStorage } from '../../utils/hooks';
 
 interface PropsState {
-  value: string;
   onSearch: (val: string) => void;
 }
 
-export const Search = ({ value, onSearch }: PropsState) => {
+export const Search = ({ onSearch }: PropsState) => {
+  const [value, setValue] = useLocalStorage(SEARCH_VALUE, '');
   const inputRef = useRef<HTMLInputElement>(null);
   const onSubmit = () => {
     const input = inputRef?.current;
     if (input?.value) {
-      onSearch(input?.value.trim());
-      setLocalStorageData(input?.value.trim());
+      const str = input?.value.trim();
+      onSearch(str);
+      setValue(str);
     }
   };
-
-  const setLocalStorageData = (value: string) =>
-    localStorage.setItem(SEARCH_VALUE, value);
 
   return (
     <div className={styles.form}>
@@ -35,7 +34,7 @@ export const Search = ({ value, onSearch }: PropsState) => {
       <Button
         type="submit"
         className={styles.btn}
-        name="sabmit"
+        name="submit"
         onClick={onSubmit}
       />
     </div>
