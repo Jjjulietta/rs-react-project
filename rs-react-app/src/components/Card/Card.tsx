@@ -10,7 +10,12 @@ export const Card = ({ item }: CardI) => {
   return (
     <tr className={styles.card}>
       <td className={styles.card_item}>
-        <NavLink to={`/details/:${item.uid}`}>{item.title}</NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? styles.active : '')}
+          to={`/details/:${item.uid}/${location.search}`}
+        >
+          {item.title}
+        </NavLink>
       </td>
       <td className={styles.card_item}>
         <span>number of episodes: </span>
