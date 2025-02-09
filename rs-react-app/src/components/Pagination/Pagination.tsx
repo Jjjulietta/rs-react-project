@@ -30,9 +30,13 @@ export const Pagination = (props: PaginationProps) => {
         {'<'}
       </button>
       <div className={styles.container}>
-        <div className={styles.container_el_active}>{currentPage}</div>
+        <div data-testid="currentPage" className={styles.container_el_active}>
+          {currentPage}
+        </div>
         <span>/</span>
-        <div className={styles.container_el}>{totalPage}</div>
+        <div data-testid="totalPage" className={styles.container_el}>
+          {totalPage}
+        </div>
       </div>
       <button
         type="button"

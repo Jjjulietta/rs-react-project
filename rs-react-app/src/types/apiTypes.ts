@@ -54,10 +54,10 @@ export enum Statuses {
 export interface SeasonDetails {
   uid: string;
   title: string;
-  series: SeriesDetails;
+  series: SeriesDetails | null;
   seasonNumber: number;
   numberOfEpisodes: number;
-  episodes: EpisodeDetails[];
+  episodes: EpisodeDetails[] | [];
 }
 
 export interface EpisodeType {

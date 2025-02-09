@@ -2,7 +2,7 @@ interface ButtonProps {
   className: CSSModuleClasses[string];
   type: 'submit' | 'reset' | 'button' | undefined;
   name: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 export const Button = ({ className, type, name, onClick }: ButtonProps) => {
   return (
