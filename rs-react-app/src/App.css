@@ -1,8 +1,26 @@
 #root {
+  background-color: var(--background-primary);
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+:root[data-theme='light'] {
+  --background-primary: rgb(247, 238, 238, 0.5);
+  --background-secondary: rgba(252, 251, 252, 0.9);
+  --color-text: rgba(82, 79, 82, 0.9);
+  --accent-light: 37, 89, 88;
+}
+
+:root[data-theme='dark'] {
+  --background-primary: rgb(10, 10, 10, 0.9);
+  --background-secondary: rgba(82, 79, 82, 0.9);
+  --color-text: rgba(252, 251, 252, 0.9);
+  --accent-dark: 90, 182, 204;
+}
+
+body {
+  background-color: var(--background-primary);
 }
 
 .logo {

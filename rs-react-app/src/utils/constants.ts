@@ -5,6 +5,7 @@ export const URLS = {
 };
 
 export const SEARCH_VALUE = 'searchValue';
+export const THEME = 'theme';
 
 export const BASE_URL = 'https://stapi.co/api';
 
@@ -20,3 +21,8 @@ export const PAGINATION_DEFAULT = {
   firstPage: true,
   lastPage: true,
 };
+
+export enum Theme {
+  Light = 'light',
+  Dark = 'dark',
+}

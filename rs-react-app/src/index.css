@@ -13,6 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root[data-theme='light'] {
+  --background-primary: 44, 191, 170;
+  --accent-light: 37, 89, 88;
+}
+
+:root[data-theme='dark'] {
+  --background-primary: 25, 48, 66;
+  --accent-dark: 90, 182, 204;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
