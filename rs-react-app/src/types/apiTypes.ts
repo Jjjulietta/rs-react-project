@@ -12,7 +12,7 @@ export interface SeasonType {
 export interface Seasons {
   numberOfEpisodes: number;
   title: string;
-  uid: number;
+  uid: string;
   seasonNumber: number;
   series: {
     title: string;
