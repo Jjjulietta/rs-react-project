@@ -1,5 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SeasonDetails } from '../types/apiTypes';
+import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { SeasonDetails } from '../models/types/apiTypes';
 import { RootState } from './store';
 
 const initialState: SeasonDetails[] = [];
@@ -29,3 +29,10 @@ export const { detailsAdded, detailsRemoved, removedAllDetails } =
 export default detailsSlice.reducer;
 
 export const selectAllDetails = (state: RootState) => state.checkedDetails;
+
+export const memoizedSelectorsAllDetails = createSelector(
+  [(state: RootState) => state.checkedDetails],
+  (checkedDetails) => {
+    return checkedDetails;
+  }
+);

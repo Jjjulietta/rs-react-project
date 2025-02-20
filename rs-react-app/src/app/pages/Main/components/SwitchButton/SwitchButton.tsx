@@ -1,6 +1,6 @@
 import styles from './SwitchButton.module.css';
-import { useTheme } from '../../context/themeContext';
-import { Theme } from '../../utils/constants';
+import { useTheme } from '../../../../../context/themeContext';
+import { Theme } from '../../../../models/constants/constants';
 import { useNavigate, useParams } from 'react-router';
 
 export const SwitchButton = () => {
@@ -29,7 +29,7 @@ export const SwitchButton = () => {
           onChange={onChange}
           checked={theme === Theme.Dark ? true : false}
         />
-        <span className={styles.slider}></span>
+        <span data-testid="themes" className={styles.slider}></span>
       </label>
       <span className={styles.theme_name}>Dark</span>
     </div>

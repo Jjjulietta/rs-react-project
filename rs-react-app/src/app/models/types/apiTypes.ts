@@ -92,8 +92,8 @@ export interface SeriesType {
   abbreviation: string;
   productionStartYear: number | null;
   productionEndYear: number | null;
-  originalRunStartDate: Date | null;
-  originalRunEndDate: Date | null;
+  originalRunStartDate: string | null;
+  originalRunEndDate: string | null;
   seasonsCount: number;
   episodesCount: number;
   featureLengthEpisodesCount: number;
@@ -111,7 +111,7 @@ export interface SeriesDetails {
   title: string;
   abbreviation: string;
   productionStartYear: number | null;
-  originalRunStartDate: Date | null;
+  originalRunStartDate: string | null;
   seasonsCount: number;
   episodesCount: number;
   featureLengthEpisodesCount: number;
@@ -125,4 +125,22 @@ export interface EpisodeDetails {
   episodeNumber: number;
   productionSerialNumber: string;
   usAirDate: string;
+}
+
+export interface Pagination {
+  pageNumber?: number;
+  pageSize?: number;
+}
+
+export type Uid = {
+  uid: string;
+};
+
+export interface Sort extends Pagination {
+  sort?: string;
+}
+export interface SearchParams {
+  title?: string;
+  params: Sort;
+  headers?: { 'Content-Type': string };
 }

@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
 const initialState: string[] = [];
@@ -29,3 +29,17 @@ export default checkedSlise.reducer;
 export const selectAllChecked = (state: RootState) => state.checkedItems;
 export const selectCheckedNumber = (state: RootState) =>
   state.checkedItems.length;
+
+export const memoizedSelectorsCheckedItemsNumber = createSelector(
+  [(state: RootState) => state.checkedItems],
+  (checkedItems) => {
+    return checkedItems.length;
+  }
+);
+
+export const memoizedSelectorsCheckedItems = createSelector(
+  [(state: RootState) => state.checkedItems],
+  (checkedItems) => {
+    return checkedItems;
+  }
+);

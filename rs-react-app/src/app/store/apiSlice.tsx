@@ -1,7 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { BASE_URL, URLS } from '../utils/constants';
-import { AllSeasonSearch, SeasonType } from '../types/apiTypes';
-import { SearchParams, Uid } from '../services/http.service';
+import { BASE_URL, URLS } from '../models/constants/constants';
+import {
+  AllSeasonSearch,
+  SearchParams,
+  SeasonType,
+  Uid,
+} from '../models/types/apiTypes';
 
 export const apiSlice = createApi({
   reducerPath: 'api',

@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react';
-import { Theme } from '../utils/constants';
+import { Theme } from '../app/models/constants/constants';
 
 export const defaultContext = {
   theme: Theme.Light,

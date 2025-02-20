@@ -1,6 +1,6 @@
-import { Seasons } from '../../types/apiTypes';
+import { Seasons } from '../../../../models/types/apiTypes';
 import styles from './CardList.module.css';
-import { Loader } from '../Loader/Loader';
+import { Loader } from '../../../../shared/components/Loader/Loader';
 import { Card } from '../Card/Card';
 
 interface PropsState {

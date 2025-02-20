@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import styles from './Search.module.css';
-import { Button } from '../Button/Button';
-import { SEARCH_VALUE } from '../../utils/constants';
-import { useLocalStorage } from '../../utils/hooks';
+import { Button } from '../../../../shared/components/Button/Button.tsx';
+import { SEARCH_VALUE } from '../../../../models/constants/constants.ts';
+import { useLocalStorage } from '../../../../shared/utils/hooksLS.tsx';
 
 interface PropsState {
   onSearch: (val: string) => void;
@@ -11,12 +11,16 @@ interface PropsState {
 export const Search = ({ onSearch }: PropsState) => {
   const [value, setValue] = useLocalStorage(SEARCH_VALUE, '');
   const inputRef = useRef<HTMLInputElement>(null);
+
   const onSubmit = () => {
     const input = inputRef?.current;
     if (input?.value) {
       const str = input?.value.trim();
       onSearch(str);
       setValue(str);
+    } else {
+      onSearch('');
+      setValue('');
     }
   };
 

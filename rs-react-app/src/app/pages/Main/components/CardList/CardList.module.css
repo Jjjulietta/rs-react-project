@@ -5,6 +5,7 @@
 
 .table_container {
   margin-bottom: 20px;
+  background-color: var(--background-primary);
 }
 
 .head {
