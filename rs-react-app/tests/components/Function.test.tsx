@@ -1,4 +1,4 @@
-import { stringTransform } from '../../src/utils/helpers';
+import { stringTransform } from '../../src/app/shared/utils/helpers';
 
 describe('function', () => {
   it('should', () => {

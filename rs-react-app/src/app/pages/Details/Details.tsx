@@ -10,7 +10,6 @@ import { useGetDetailsQuery } from '../../store/apiSlice';
 export const Details = () => {
   const { uid } = useParams();
   const navigate = useNavigate();
-  // const [details, setDetails] = useState<SeasonDetails | undefined>();
   const [errorStatus, setErrorStatus] = useState<string | undefined>();
   const {
     data: season,

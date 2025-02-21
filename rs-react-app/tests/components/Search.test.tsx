@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Search } from '../../src/components/Search/Search';
+import { Search } from '../../src/app/pages/Main/components/Search/Search';
 import { MemoryRouter } from 'react-router';
 import { userEvent } from '@testing-library/user-event';
 

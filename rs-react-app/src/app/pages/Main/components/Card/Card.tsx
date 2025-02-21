@@ -60,7 +60,6 @@ export const Card = ({ item }: CardI) => {
         <input
           type="checkbox"
           onChange={handleChange}
-          // defaultChecked={checked.includes(item.uid)}
           checked={checked.includes(item.uid)}
         />
       </td>

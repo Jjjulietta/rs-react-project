@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import ErrorBoundary from '../../src/components/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from '../../src/app/shared/components/ErrorBoundary/ErrorBoundary';
 import { MemoryRouter } from 'react-router';
-import { CardList } from '../../src/components/CardList/CardList';
+import { CardList } from '../../src/app/pages/Main/components/CardList/CardList';
 
 describe('Error Boundary', () => {
   const TrowError = () => {
