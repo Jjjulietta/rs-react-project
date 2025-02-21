@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import userEvent from '@testing-library/user-event';
-import { Pagination } from '../../src/components/Pagination/Pagination';
+import { Pagination } from '../../src/app/shared/components/Pagination/Pagination';
 
 describe('Pagination', () => {
   afterEach(() => {
@@ -27,7 +27,6 @@ describe('Pagination', () => {
         <Pagination setPage={setPage} currentPage={1} totalPage={3} />
       </MemoryRouter>
     );
-    screen.debug();
     const arrowBtnRight = screen.getByRole('button', { name: '>' });
     const arrowBtnLeft = screen.getByRole('button', { name: '<' });
 
@@ -42,8 +41,10 @@ describe('Pagination', () => {
     const mockFn = vi.spyOn(console, 'log').mockReturnThis();
     const user = userEvent.setup();
     await user.click(arrowBtnRight);
-    expect(mockFn).toHaveBeenCalled();
-    waitFor(() => expect(current).toHaveTextContent('2'));
+    waitFor(() => {
+      expect(mockFn).toHaveBeenCalled();
+      expect(current).toHaveTextContent('2');
+    });
     expect(location.pathname).toEqual('/');
   });
 });
