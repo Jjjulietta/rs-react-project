@@ -13,7 +13,6 @@ export const stringTransform = (value: string) => {
 };
 
 export const convertToCSV = (objArray: (SeriesDetails | null)[]) => {
-  console.log(objArray);
   let csvString = '';
   if (objArray.length && objArray.every((item) => item !== null)) {
     const str = [

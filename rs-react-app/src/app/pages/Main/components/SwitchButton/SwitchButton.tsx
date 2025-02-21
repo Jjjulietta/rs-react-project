@@ -9,7 +9,6 @@ export const SwitchButton = () => {
   const navigate = useNavigate();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.checked);
     if (e.target.checked) {
       setTheme(Theme.Dark);
     } else {

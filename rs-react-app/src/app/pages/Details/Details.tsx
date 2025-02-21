@@ -38,7 +38,6 @@ export const Details = () => {
   }, [error]);
 
   const template = (obj: SeriesDetails | EpisodeDetails) => {
-    console.log(obj);
     const arr = Object.entries(obj);
     if (isSuccess) {
       return (

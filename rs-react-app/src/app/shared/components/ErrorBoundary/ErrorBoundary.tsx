@@ -1,5 +1,5 @@
 import { Component, ErrorInfo } from 'react';
-import styles from '../CardList/CardList.module.css';
+import styles from '../../../pages/Main/components/CardList/CardList.module.css';
 
 type Props = {
   children: React.ReactNode;
@@ -17,7 +17,6 @@ export default class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
-    console.log(errorInfo);
     this.logErrorToServices(error.toString(), errorInfo.componentStack);
   }
 

@@ -9,7 +9,6 @@ export type PaginationProps = {
 export const Pagination = (props: PaginationProps) => {
   const { setPage, currentPage, totalPage } = props;
   const handleClickNext = () => {
-    console.log('next');
     if (currentPage < totalPage) {
       setPage(currentPage + 1);
     }

@@ -25,21 +25,9 @@ export const Main = () => {
   const [paginationState, setPaginationState] =
     useState<PaginationI>(PAGINATION_DEFAULT);
   const [currentPage, setCurrentPage] = useState(PAGINATION_DEFAULT.pageNumber);
-  // const [error, setError] = useState<string | undefined>();
   const [errorStatus, setErrorStatus] = useState<string | undefined>();
-  // const [isLoading, setIsLoading] = useState(false);
   const params = useParams();
   const navigate = useNavigate();
-  // const dispatch = useAppDispatch();
-  // const {
-  //   data: cards,
-  //   isSuccess,
-  //   isLoading,
-  //   isError,
-  // } = useGetCardsQuery({
-  //   pageNumber: currentPage - 1,
-  //   pageSize: PAGE_SIZE,
-  // });
   const {
     data: searchCards,
     isFetching,
@@ -58,17 +46,8 @@ export const Main = () => {
   });
   const checkedNumber = useAppSelector(selectCheckedNumber);
 
-  // useEffect(() => {
-  //   if (error) {
-  //     throw error;
-  //   }
-  // }, [error]);
-
-  // const httpService = new HttpService();
   const updateValue = (val: string) => {
-    console.log(val);
     setValue(val);
-    // getSearchValue(val, FIRST_PAGE, PAGE_SIZE);
   };
 
   const closeDetails = () => {
@@ -77,72 +56,10 @@ export const Main = () => {
     }
   };
 
-  // const getData = (pageNumber: number, pageSize: number) => {
-  //   setIsLoading(true);
-  //   dispatch(loadCards({ pageNumber, pageSize }))
-  //     .unwrap()
-  //     .then((data) => console.log(data));
-  //   httpService
-  //     .getPagination(URLS.PAGINATION, { pageNumber, pageSize })
-  //     .then((data) => {
-  //       setItems(data.seasons);
-  //       setPaginationState(data.page);
-  //     })
-  //     .catch((e: AxiosError) => {
-  //       if (
-  //         e.status &&
-  //         (e.status >= Statuses.ErrorClient || e.status >= Statuses.ErrorServer)
-  //       ) {
-  //         setErrorStatus(e.message);
-  //       } else {
-  //         setError(e.message);
-  //       }
-  //     })
-  //     .finally(() => setIsLoading(false));
-  // };
-
-  // const getSearchValue = (
-  //   value: string,
-  //   pageNumber: number,
-  //   pageSize: number
-  // ) => {
-  //   setIsLoading(true);
-  //   httpService
-  //     .SearchData(
-  //       URLS.SEARCH,
-  //       value,
-  //       { pageNumber, pageSize },
-  //       {
-  //         'Content-Type': 'application/x-www-form-urlencoded',
-  //       }
-  //     )
-  //     .then((data) => {
-  //       console.log(data);
-  //       setItems(data.data?.seasons);
-  //       setPaginationState(data.data.page);
-  //     })
-  //     .catch((e: AxiosError) => {
-  //       if (
-  //         e.status &&
-  //         (e.status >= Statuses.ErrorClient || e.status >= Statuses.ErrorServer)
-  //       ) {
-  //         setErrorStatus(e.message);
-  //       } else {
-  //         setError(e.message);
-  //       }
-  //     })
-  //     .finally(() => setIsLoading(false));
-  // };
-
-  // const handleClick = () => {
-  //   setError('Error!');
-  // };
-
   useEffect(() => {
     setSearchParam({ search: `${value}`, page: `${currentPage}` });
 
     if (isSuccess && searchCards) {
-      console.log(searchCards?.seasons);
       setItems(searchCards?.seasons);
       setPaginationState(searchCards.page);
     }
@@ -155,20 +72,6 @@ export const Main = () => {
         setErrorStatus(error.message);
       }
     }
-    // if (value) {
-    //   console.log(value);
-    //   // getSearchValue(value, currentPage - 1, PAGE_SIZE);
-    //   if (isSuccess && searchCards) {
-    //     console.log(searchCards?.seasons);
-    //     setItems(searchCards?.seasons);
-    //     setPaginationState(searchCards.page);
-    //   }
-    // } else if (isSuccess && cards) {
-    //   console.log(cards?.seasons);
-    //   setItems(cards?.seasons);
-    //   setPaginationState(cards.page);
-    //   // getData(currentPage - 1, PAGE_SIZE);
-    // }
   }, [
     currentPage,
     isSuccess,
@@ -185,12 +88,6 @@ export const Main = () => {
         <SwitchButton />
         <Search onSearch={updateValue} />
         <CardList items={items} error={errorStatus} isLoading={isFetching} />
-        {/* <Button
-          type="button"
-          className={styles.btn_error}
-          onClick={handleClick}
-          name="error button"
-        /> */}
         {items.length && (
           <Pagination
             totalPage={paginationState.totalPages}

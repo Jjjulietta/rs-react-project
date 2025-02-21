@@ -36,17 +36,14 @@ export const Card = ({ item }: CardI) => {
       (!details.length || !details.find((val) => val.uid === item.uid))
     ) {
       const detailsData = getDetails(season);
-      console.log(detailsData);
       dispatch(detailsAdded(detailsData));
     }
   }, [checked, dispatch, season, item.uid, details, isSuccess]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.checked);
     if (e.target.checked) {
       dispatch(cardAdded(item.uid));
     } else {
-      console.log(item.uid);
       dispatch(cardRemoved(item.uid));
       dispatch(detailsRemoved(item.uid));
     }
