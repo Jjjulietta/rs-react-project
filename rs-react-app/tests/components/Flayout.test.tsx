@@ -10,6 +10,9 @@ vi.mock('../../src/store/checkedSlice');
 vi.mock('../../src/utils/helpers');
 
 describe('Flayout', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   it('should', async () => {
     vi.spyOn(hook, 'selectAllDetails').mockReturnValue([]);
     vi.spyOn(hooks, 'selectCheckedNumber').mockReturnValue(2);

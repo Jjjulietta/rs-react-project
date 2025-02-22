@@ -10,6 +10,9 @@ vi.mock('../../src/store/detailsSlice');
 vi.mock('../../src/store/checkedSlic');
 
 describe('Card', () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   it('should', () => {
     const { getByText } = renderWithProviders(<Card item={cardSeasons} />);
     expect(getByText('Title1')).toBeInTheDocument();
