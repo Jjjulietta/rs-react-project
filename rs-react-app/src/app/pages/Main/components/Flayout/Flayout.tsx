@@ -2,7 +2,10 @@ import {
   removedAll,
   selectCheckedNumber,
 } from '../../../../store/checkedSlice';
-import { selectAllDetails } from '../../../../store/detailsSlice';
+import {
+  removedAllDetails,
+  selectAllDetails,
+} from '../../../../store/detailsSlice';
 import { useAppDispatch, useAppSelector } from '../../../../store/withTypes';
 import { convertToCSV } from '../../../../shared/utils/helpers';
 import { Button } from '../../../../shared/components/Button/Button';
@@ -15,6 +18,7 @@ export const Flayout = () => {
   const dispatch = useAppDispatch();
   const unselectAll = () => {
     dispatch(removedAll([]));
+    dispatch(removedAllDetails([]));
   };
 
   return (
