@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router';
 import styles from './Details.module.css';
 import { useEffect, useState } from 'react';
-import { EpisodeDetails, SeriesDetails } from '../../models/types/apiTypes';
+import { EpisodeDetails, SeriesDetails } from '../../models/types/api';
 import { Loader } from '../../shared/components/Loader/Loader';
 import { getDetails, stringTransform } from '../../shared/utils/helpers';
 import { Button } from '../../shared/components/Button/Button';

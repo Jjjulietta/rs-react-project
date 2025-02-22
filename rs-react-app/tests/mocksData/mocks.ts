@@ -4,7 +4,7 @@ import {
   Seasons,
   SeasonType,
   SeriesType,
-} from '../../src/app/models/types/apiTypes';
+} from '../../src/app/models/types/api';
 
 export const series: SeriesDetails = {
   abbreviation: 'DIS',

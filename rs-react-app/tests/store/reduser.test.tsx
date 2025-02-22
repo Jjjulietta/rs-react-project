@@ -8,7 +8,7 @@ import reduserDetails, {
   detailsRemoved,
   removedAllDetails,
 } from '../../src/app/store/detailsSlice';
-import { SeasonDetails } from '../../src/app/models/types/apiTypes';
+import { SeasonDetails } from '../../src/app/models/types/api';
 import { details, detailsArray } from '../mocksData/mocks';
 
 describe('checkedSlice', () => {

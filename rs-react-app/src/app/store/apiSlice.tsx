@@ -5,7 +5,7 @@ import {
   SearchParams,
   SeasonType,
   Uid,
-} from '../models/types/apiTypes';
+} from '../models/types/api';
 
 export const apiSlice = createApi({
   reducerPath: 'api',

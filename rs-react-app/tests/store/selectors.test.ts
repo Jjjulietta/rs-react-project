@@ -3,7 +3,7 @@ import {
   memoizedSelectorsCheckedItemsNumber,
 } from '../../src/app/store/checkedSlice';
 import { memoizedSelectorsAllDetails } from '../../src/app/store/detailsSlice';
-import { SeasonDetails } from '../../src/app/models/types/apiTypes';
+import { SeasonDetails } from '../../src/app/models/types/api';
 import { details } from '../mocksData/mocks';
 
 describe('selectors', () => {

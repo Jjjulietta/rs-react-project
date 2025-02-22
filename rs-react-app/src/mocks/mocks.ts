@@ -2,7 +2,7 @@ import {
   SeriesType,
   SeasonType,
   AllSeasonSearch,
-} from '../app/models/types/apiTypes';
+} from '../app/models/types/api';
 
 export const series: SeriesType = {
   abbreviation: 'DIS',

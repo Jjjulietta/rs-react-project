@@ -1,15 +1,15 @@
-import { Seasons } from '../../../../models/types/apiTypes';
+import { Seasons } from '../../../../models/types/api';
 import styles from './CardList.module.css';
 import { Loader } from '../../../../shared/components/Loader/Loader';
 import { Card } from '../Card/Card';
 
-interface PropsState {
+interface CardList {
   items: Seasons[];
   error: string | undefined;
   isLoading: boolean;
 }
 
-export const CardList = ({ items, error, isLoading }: PropsState) => {
+export const CardList = ({ items, error, isLoading }: CardList) => {
   return (
     <>
       <h2>Star Trek Seasons - Results</h2>

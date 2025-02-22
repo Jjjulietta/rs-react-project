@@ -2,7 +2,7 @@ import {
   EpisodeDetails,
   SeasonType,
   SeriesDetails,
-} from '../../models/types/apiTypes';
+} from '../../models/types/api';
 
 export const stringTransform = (value: string) => {
   const arr = value

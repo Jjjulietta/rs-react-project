@@ -1,5 +1,5 @@
 import styles from './Card.module.css';
-import { Seasons } from '../../../../models/types/apiTypes';
+import { Seasons } from '../../../../models/types/api';
 import { NavLink } from 'react-router';
 import { useAppDispatch, useAppSelector } from '../../../../store/withTypes';
 import {
@@ -16,11 +16,11 @@ import {
 import { useEffect } from 'react';
 import { getDetails } from '../../../../shared/utils/helpers';
 
-interface CardI {
+interface Card {
   item: Seasons;
 }
 
-export const Card = ({ item }: CardI) => {
+export const Card = ({ item }: Card) => {
   const dispatch = useAppDispatch();
   const checked = useAppSelector(selectAllChecked);
   const details = useAppSelector(selectAllDetails);

@@ -1,5 +1,5 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SeasonDetails } from '../models/types/apiTypes';
+import { SeasonDetails } from '../models/types/api';
 import { RootState } from './store';
 
 const initialState: SeasonDetails[] = [];

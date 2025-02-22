@@ -6,7 +6,7 @@ import {
   PAGINATION_DEFAULT,
   SEARCH_VALUE,
 } from '../../models/constants/constants.ts';
-import { PaginationI, Seasons } from '../../models/types/apiTypes.ts';
+import { PaginationI, Seasons } from '../../models/types/api.ts';
 import styles from './Main.module.css';
 import { Pagination } from '../../shared/components/Pagination/Pagination.tsx';
 import { Outlet, useNavigate, useParams, useSearchParams } from 'react-router';
