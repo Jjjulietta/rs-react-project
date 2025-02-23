@@ -1,7 +1,17 @@
-import { stringTransform } from '../../src/app/shared/utils/helpers';
+import {
+  stringTransform,
+  getDetails,
+} from '../../src/app/shared/utils/helpers';
+import { details, seasonApi } from '../mocksData/mocks';
 
-describe('function', () => {
+describe('stringTransform', () => {
   it('should', () => {
     expect(stringTransform('numberOfEpisodes')).toEqual('number  of  episodes');
+  });
+});
+
+describe('getDetails', () => {
+  it('should', () => {
+    expect(getDetails(seasonApi)).toEqual(details);
   });
 });

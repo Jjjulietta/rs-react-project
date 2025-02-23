@@ -47,9 +47,9 @@ describe('Card', () => {
     const dispatchAdded = vi
       .spyOn(hooks, 'cardAdded')
       .mockReturnValue({ payload: '1', type: 'checked/cardAdded' });
-    const detailsMock = vi
-      .spyOn(hook, 'selectAllDetails')
-      .mockReturnValue([details]);
+    const detailsAdded = vi
+      .spyOn(hook, 'detailsAdded')
+      .mockReturnValue({ payload: details, type: 'details/detailsAdded' });
     vi.spyOn(hooks, 'cardRemoved').mockReturnValue({
       payload: '1',
       type: 'checked/cardRemoved',
@@ -60,11 +60,11 @@ describe('Card', () => {
     });
     const { getByRole } = renderWithProviders(<Card item={cardSeasons} />);
     expect(getByRole('checkbox')).toBeInTheDocument();
-    fireEvent.click(getByRole('checkbox'));
+    userEvent.click(getByRole('checkbox'));
     await waitFor(() => {
       expect(getByRole('checkbox')).toBeChecked();
       expect(dispatchAdded).toHaveBeenCalledWith('1');
-      expect(detailsMock).toHaveBeenCalled();
+      expect(detailsAdded).toHaveBeenCalledWith(details);
     });
     fireEvent.click(getByRole('checkbox'));
     await waitFor(() => {
