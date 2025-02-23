@@ -8,12 +8,7 @@ import {
   selectAllChecked,
 } from '../../../../store/checkedSlice';
 import { useGetCheckedDetailsQuery } from '../../../../store/apiSlice';
-import {
-  detailsAdded,
-  detailsRemoved,
-  selectAllDetails,
-} from '../../../../store/detailsSlice';
-import { useEffect } from 'react';
+import { detailsAdded, detailsRemoved } from '../../../../store/detailsSlice';
 import { getDetails } from '../../../../shared/utils/helpers';
 
 interface Card {
@@ -23,26 +18,15 @@ interface Card {
 export const Card = ({ item }: Card) => {
   const dispatch = useAppDispatch();
   const checked = useAppSelector(selectAllChecked);
-  const details = useAppSelector(selectAllDetails);
-  const { data: season, isSuccess } = useGetCheckedDetailsQuery({
+  const { data: season } = useGetCheckedDetailsQuery({
     uid: item.uid || '',
   });
 
-  useEffect(() => {
-    if (
-      checked.includes(item.uid) &&
-      isSuccess &&
-      season?.season.uid === item.uid &&
-      (!details.length || !details.find((val) => val.uid === item.uid))
-    ) {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked && season) {
+      dispatch(cardAdded(item.uid));
       const detailsData = getDetails(season);
       dispatch(detailsAdded(detailsData));
-    }
-  }, [checked, dispatch, season, item.uid, details, isSuccess]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked) {
-      dispatch(cardAdded(item.uid));
     } else {
       dispatch(cardRemoved(item.uid));
       dispatch(detailsRemoved(item.uid));
@@ -60,6 +44,7 @@ export const Card = ({ item }: Card) => {
         <input
           type="checkbox"
           onChange={handleChange}
+          // defaultChecked={checked.includes(item.uid)}
           checked={checked.includes(item.uid)}
         />
       </td>

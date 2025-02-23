@@ -29,9 +29,12 @@ export const Flayout = () => {
         name="Unselect all"
         onClick={unselectAll}
       />
-      <div data-testid="checkedNumber" className={styles.text}>
-        {checkedNumber} items are selected
-      </div>
+
+      <span data-testid="checkedNumber" className={styles.text}>
+        {checkedNumber}
+      </span>
+      <span>items are selected</span>
+
       <a
         href={series ? convertToCSV(series) : '/'}
         download={`${checkedNumber}_seasons.csv`}

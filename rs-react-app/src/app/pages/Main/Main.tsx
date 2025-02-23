@@ -22,6 +22,8 @@ export const Main = () => {
   const [value, setValue] = useState<string | null | undefined>(search);
   const [items, setItems] = useState<Seasons[] | []>([]);
   const [, setSearchParam] = useSearchParams();
+  const checkedNumbers = useAppSelector(selectCheckedNumber);
+  const [isVisible, setIsVisible] = useState(false);
   const [paginationState, setPaginationState] =
     useState<PaginationI>(PAGINATION_DEFAULT);
   const [currentPage, setCurrentPage] = useState(PAGINATION_DEFAULT.pageNumber);
@@ -44,7 +46,14 @@ export const Main = () => {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
   });
-  const checkedNumber = useAppSelector(selectCheckedNumber);
+
+  useEffect(() => {
+    if (checkedNumbers && checkedNumbers !== 0) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  }, [checkedNumbers]);
 
   const updateValue = (val: string) => {
     setValue(val);
@@ -95,9 +104,8 @@ export const Main = () => {
             setPage={setCurrentPage}
           />
         )}
-        {checkedNumber && <Flayout />}
       </div>
-
+      {isVisible && <Flayout />}
       <Outlet />
     </div>
   );
