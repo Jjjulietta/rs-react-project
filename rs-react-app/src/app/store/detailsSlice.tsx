@@ -29,6 +29,8 @@ export const { detailsAdded, detailsRemoved, removedAllDetails } =
 export default detailsSlice.reducer;
 
 export const selectAllDetails = (state: RootState) => state.checkedDetails;
+export const selectCheckedDetailsLength = (state: RootState) =>
+  state.checkedDetails.length;
 
 export const memoizedSelectorsAllDetails = createSelector(
   [(state: RootState) => state.checkedDetails],
