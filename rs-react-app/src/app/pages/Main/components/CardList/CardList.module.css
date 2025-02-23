@@ -1,0 +1,27 @@
+.table {
+  margin: 0 auto;
+  box-shadow: 2px 4px 8px grey;
+}
+
+.table_container {
+  margin-bottom: 20px;
+  background-color: var(--background-primary);
+}
+
+.head {
+  border: 1px solid gray;
+  background-color: rgba(100, 100, 100, 0.4);
+}
+
+.th {
+  padding: 10px;
+  width: 100px;
+}
+
+.error_template {
+  padding: 30px;
+  border: 2px solid red;
+  color: red;
+  margin-bottom: 30px;
+  font-weight: 600;
+}

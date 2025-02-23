@@ -1,0 +1,32 @@
+.container {
+  position: fixed;
+  z-index: 100;
+  bottom: 0px;
+  left: calc((100vw - 450px) / 2);
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: rgba(100, 100, 200, 0.3); */
+  background-color: var(--background-secondary);
+  box-shadow: 2px 4px 8px rgba(95, 95, 138, 0.6);
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.btn {
+  background-color: rgba(150, 150, 250, 0.6);
+  transition: all 0.3s;
+}
+
+.text {
+  padding-left: 10px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: rgba(150, 150, 250, 0.9);
+  box-shadow: 3px 3px 5px rgb(9, 190, 235);
+  border-color: transparent;
+}
