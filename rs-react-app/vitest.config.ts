@@ -13,13 +13,13 @@ export default defineConfig({
       ...configDefaults.exclude,
       'src/App.tsx',
       'src/main.tsx',
-      'src/app/models/types/apiTypes.ts',
+      'src/app/models/types/api.ts',
     ],
     coverage: {
       exclude: [
         'src/App.tsx',
         'src/main.tsx',
-        'src/app/models/types/apiTypes.ts',
+        'src/app/models/types/api.ts',
         ...coverageConfigDefaults.exclude,
       ],
     },

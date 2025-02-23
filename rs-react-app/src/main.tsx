@@ -13,7 +13,7 @@ if (!root) {
   throw new Error('element not found');
 }
 
-const store = setupStore({});
+const store = setupStore();
 
 createRoot(root).render(
   <StrictMode>
