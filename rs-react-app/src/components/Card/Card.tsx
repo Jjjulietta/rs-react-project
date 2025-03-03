@@ -1,15 +1,14 @@
 import styles from './Card.module.css';
-import { Seasons } from '../../../../models/types/api';
-import { NavLink } from 'react-router';
-import { useAppDispatch, useAppSelector } from '../../../../store/withTypes';
+import { Seasons } from '../../models/types/api';
+import { useAppDispatch, useAppSelector } from '../../store/withTypes';
 import {
   cardAdded,
   cardRemoved,
   selectAllChecked,
-} from '../../../../store/checkedSlice';
-import { useGetCheckedDetailsQuery } from '../../../../store/apiSlice';
-import { detailsAdded, detailsRemoved } from '../../../../store/detailsSlice';
-import { getDetails } from '../../../../shared/utils/helpers';
+} from '../../store/checkedSlice';
+import { detailsRemoved } from '../../store/detailsSlice';
+import { useRouter } from 'next/compat/router';
+import { uidChecked } from 'src/store/uidSlice';
 
 interface Card {
   item: Seasons;
@@ -18,15 +17,12 @@ interface Card {
 export const Card = ({ item }: Card) => {
   const dispatch = useAppDispatch();
   const checked = useAppSelector(selectAllChecked);
-  const { data: season } = useGetCheckedDetailsQuery({
-    uid: item.uid || '',
-  });
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.checked && season) {
+    if (e.target.checked) {
       dispatch(cardAdded(item.uid));
-      const detailsData = getDetails(season);
-      dispatch(detailsAdded(detailsData));
+      dispatch(uidChecked(item.uid));
     } else {
       dispatch(cardRemoved(item.uid));
       dispatch(detailsRemoved(item.uid));
@@ -35,16 +31,18 @@ export const Card = ({ item }: Card) => {
   return (
     <tr className={styles.card}>
       <td className={styles.card_item}>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.active : '')}
-          to={`/details/:${item.uid}/${location.search}`}
+        <button
+          onClick={() =>
+            !router.query.uid &&
+            router.replace(`${location.search}&uid=${item.uid}`)
+          }
         >
+          {' '}
           {item.title}
-        </NavLink>
+        </button>
         <input
           type="checkbox"
           onChange={handleChange}
-          // defaultChecked={checked.includes(item.uid)}
           checked={checked.includes(item.uid)}
         />
       </td>

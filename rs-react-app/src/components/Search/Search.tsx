@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import styles from './Search.module.css';
-import { Button } from '../../../../shared/components/Button/Button.tsx';
-import { SEARCH_VALUE } from '../../../../models/constants/constants.ts';
-import { useLocalStorage } from '../../../../shared/utils/hooksLS.tsx';
+import { Button } from '../Button/Button';
+import { SEARCH_VALUE } from '../../models/constants/constants';
+import { useLocalStorage } from '../../utils/hooksLS';
 
 interface PropsState {
   onSearch: (val: string) => void;

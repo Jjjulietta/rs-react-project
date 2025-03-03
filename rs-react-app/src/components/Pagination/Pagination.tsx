@@ -1,4 +1,6 @@
 import styles from './Pagination.module.css';
+import { uidCheckedRemoved } from 'src/store/uidSlice';
+import { useAppDispatch } from 'src/store/withTypes';
 
 export type PaginationProps = {
   setPage: (page: number) => void;
@@ -7,15 +9,18 @@ export type PaginationProps = {
 };
 
 export const Pagination = (props: PaginationProps) => {
+  const dispatch = useAppDispatch();
   const { setPage, currentPage, totalPage } = props;
   const handleClickNext = () => {
     if (currentPage < totalPage) {
       setPage(currentPage + 1);
+      dispatch(uidCheckedRemoved(''));
     }
   };
   const handleClickPrev = () => {
     if (currentPage > 1) {
       setPage(currentPage - 1);
+      dispatch(uidCheckedRemoved(''));
     }
   };
   return (
