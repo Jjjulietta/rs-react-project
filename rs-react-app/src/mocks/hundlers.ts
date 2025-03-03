@@ -1,15 +1,15 @@
 import { http, HttpResponse } from 'msw';
 import { cleanup } from '@testing-library/react';
-import { apiSlice } from '../app/store/apiSlice';
-import { setupStore } from '../app/store/store';
+import { apiSlice } from '../store/apiSlice';
+import { setupStore } from '../store/store';
 import { server } from './api/server';
-import { fetch, Headers } from 'cross-fetch';
 import { cards, cardsSearch, details } from './mocks';
+import { beforeAll, afterEach, afterAll } from 'vitest';
 
 window.fetch = fetch;
 window.Headers = Headers;
 
-const store = setupStore({});
+const store = setupStore();
 
 beforeAll(() => {
   server.listen();

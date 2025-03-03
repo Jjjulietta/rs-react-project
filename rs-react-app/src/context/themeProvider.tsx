@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
-import { THEME, Theme } from '../app/models/constants/constants.ts';
+import { THEME, Theme } from '../models/constants/constants';
 import { defaultContext, ThemeContext } from './themeContext';
-import { useLocalStorage } from '../app/shared/utils/hooksLS.tsx';
+import { useLocalStorage } from '../utils/hooksLS';
 
 export const ThemeContextProvider = (props: { children: React.ReactNode }) => {
   const [value, setValue] = useLocalStorage(THEME, Theme.Light);

@@ -1,4 +1,5 @@
 import styles from './NotFoun.module.css';
+import notFound from '../../../public/not_found.svg';
 
 export const NotFound = () => {
   return (
@@ -7,7 +8,7 @@ export const NotFound = () => {
       <img
         data-testid="not_found"
         className={styles.img}
-        src="src/assets/not_found.svg"
+        src={notFound.src}
       ></img>
     </div>
   );

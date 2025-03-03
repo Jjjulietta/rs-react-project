@@ -1,11 +1,12 @@
 import '@testing-library/jest-dom/vitest';
 import 'whatwg-fetch';
-import { setupStore } from '../src/app/store/store';
+import { setupStore } from '../src/store/store';
 import { server } from '../src/mocks/api/server';
-import { apiSlice } from '../src/app/store/apiSlice';
+import { apiSlice } from '../src/store/apiSlice';
 import { cleanup } from '@testing-library/react';
+import { afterAll, afterEach, beforeAll } from 'vitest';
 
-const store = setupStore({});
+const store = setupStore();
 
 beforeAll(() => {
   server.listen();

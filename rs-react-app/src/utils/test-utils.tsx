@@ -1,20 +1,13 @@
 import React, { PropsWithChildren } from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { setupStore } from '../../store/store';
-import { BrowserRouter } from 'react-router';
+import { setupStore } from '../store/store';
 
 export function renderWithProviders(ui: React.ReactElement) {
-  const {
-    preloadedState = {},
-    store = setupStore(preloadedState),
-    ...renderOptions
-  } = {};
+  const { store = setupStore(), ...renderOptions } = {};
 
   const Wrapper = ({ children }: PropsWithChildren) => (
-    <Provider store={store}>
-      <BrowserRouter>{children}</BrowserRouter>
-    </Provider>
+    <Provider store={store}>{children}</Provider>
   );
   return {
     store,

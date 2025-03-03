@@ -1,8 +1,4 @@
-import {
-  EpisodeDetails,
-  SeasonType,
-  SeriesDetails,
-} from '../../models/types/api';
+import { EpisodeDetails, SeasonType, SeriesDetails } from '../models/types/api';
 
 export const stringTransform = (value: string) => {
   const arr = value
@@ -28,7 +24,7 @@ export const convertToCSV = (objArray: (SeriesDetails | null)[]) => {
   return csvURL;
 };
 
-export const getDetails = (data: SeasonType) => {
+export const getDetailsSeries = (data: SeasonType) => {
   const episodes = data.season.episodes.reduce<EpisodeDetails[]>(
     (details, item) => {
       details.push({
