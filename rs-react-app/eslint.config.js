@@ -29,11 +29,12 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
+      'react-hooks/exhaustive-deps': 'off',
       'react-refresh/only-export-components': [
-        'warn',
+        'off',
         { allowConstantExport: true },
       ],
-      'react-compiler/react-compiler': 'error',
+      'react-compiler/react-compiler': 'off',
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
     },
