@@ -1,16 +1,12 @@
 import { render, screen } from '@testing-library/react';
-import { Search } from '../../src/app/pages/Main/components/Search/Search';
-import { MemoryRouter } from 'react-router';
+import { Search } from '../../src/components/Search/Search';
 import { userEvent } from '@testing-library/user-event';
+import { describe, it, vi, expect } from 'vitest';
 
 describe('Search', () => {
   it('should render Search component', () => {
     const handleSearch = vi.fn();
-    render(
-      <MemoryRouter>
-        <Search onSearch={handleSearch} />
-      </MemoryRouter>
-    );
+    render(<Search onSearch={handleSearch} />);
 
     const input = screen.getByRole('searchbox');
     const button = screen.getByRole('button', { name: 'submit' });
@@ -20,11 +16,7 @@ describe('Search', () => {
 
   it('should call local storage setItem method when button clicked', async () => {
     const handleSearch = vi.fn();
-    render(
-      <MemoryRouter>
-        <Search onSearch={handleSearch} />
-      </MemoryRouter>
-    );
+    render(<Search onSearch={handleSearch} />);
 
     const input = screen.getByRole('searchbox');
     const button = screen.getByRole('button', { name: 'submit' });

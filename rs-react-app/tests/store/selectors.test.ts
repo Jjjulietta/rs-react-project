@@ -1,9 +1,9 @@
 import {
   memoizedSelectorsCheckedItems,
   memoizedSelectorsCheckedItemsNumber,
-} from '../../src/app/store/checkedSlice';
-import { memoizedSelectorsAllDetails } from '../../src/app/store/detailsSlice';
-import { SeasonDetails } from '../../src/app/models/types/api';
+} from '../../src/store/checkedSlice';
+import { memoizedSelectorsAllDetails } from '../../src/store/detailsSlice';
+import { SeasonDetails } from '../../src/models/types/api';
 import { details } from '../mocksData/mocks';
 
 describe('selectors', () => {

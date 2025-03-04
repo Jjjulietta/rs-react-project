@@ -2,13 +2,13 @@ import reducer, {
   cardAdded,
   cardRemoved,
   removedAll,
-} from '../../src/app/store/checkedSlice';
+} from '../../src/store/checkedSlice';
 import reduserDetails, {
   detailsAdded,
   detailsRemoved,
   removedAllDetails,
-} from '../../src/app/store/detailsSlice';
-import { SeasonDetails } from '../../src/app/models/types/api';
+} from '../../src/store/detailsSlice';
+import { SeasonDetails } from '../../src/models/types/api';
 import { details, detailsArray } from '../mocksData/mocks';
 
 describe('checkedSlice', () => {

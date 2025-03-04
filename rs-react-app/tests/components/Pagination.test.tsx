@@ -1,7 +1,8 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouter } from 'react-router';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Pagination } from '../../src/app/shared/components/Pagination/Pagination';
+import { Pagination } from '../../src/components/Pagination/Pagination';
+import { describe, afterEach, vi, it, expect } from 'vitest';
+import { renderWithProviders } from 'src/utils/test-utils';
 
 describe('Pagination', () => {
   afterEach(() => {
@@ -9,23 +10,15 @@ describe('Pagination', () => {
   });
   it('Pagination', () => {
     const setPage = vi.fn();
-    render(
-      <MemoryRouter>
-        <Pagination
-          setPage={setPage}
-          currentPage={1}
-          totalPage={3}
-        ></Pagination>
-      </MemoryRouter>
+    renderWithProviders(
+      <Pagination setPage={setPage} currentPage={1} totalPage={3}></Pagination>
     );
     expect(screen.getByRole('button', { name: '>' })).toBeInTheDocument();
   });
   it('should display arrow buttons and number of pages', async () => {
     const setPage = vi.fn();
-    render(
-      <MemoryRouter>
-        <Pagination setPage={setPage} currentPage={1} totalPage={3} />
-      </MemoryRouter>
+    renderWithProviders(
+      <Pagination setPage={setPage} currentPage={1} totalPage={3} />
     );
     const arrowBtnRight = screen.getByRole('button', { name: '>' });
     const arrowBtnLeft = screen.getByRole('button', { name: '<' });

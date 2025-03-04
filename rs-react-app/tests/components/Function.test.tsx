@@ -1,7 +1,5 @@
-import {
-  stringTransform,
-  getDetails,
-} from '../../src/app/shared/utils/helpers';
+import { describe, it, expect } from 'vitest';
+import { stringTransform, getDetailsSeries } from '../../src/utils/helpers';
 import { details, seasonApi } from '../mocksData/mocks';
 
 describe('stringTransform', () => {
@@ -12,6 +10,6 @@ describe('stringTransform', () => {
 
 describe('getDetails', () => {
   it('should', () => {
-    expect(getDetails(seasonApi)).toEqual(details);
+    expect(getDetailsSeries(seasonApi)).toEqual(details);
   });
 });

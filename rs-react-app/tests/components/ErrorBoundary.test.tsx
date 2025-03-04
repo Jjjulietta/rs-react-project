@@ -1,7 +1,21 @@
 import { render, screen } from '@testing-library/react';
-import ErrorBoundary from '../../src/app/shared/components/ErrorBoundary/ErrorBoundary';
-import { MemoryRouter } from 'react-router';
-import { CardList } from '../../src/app/pages/Main/components/CardList/CardList';
+import ErrorBoundary from '../../src/components/ErrorBoundary/ErrorBoundary';
+import { CardList } from '../../src/components/CardList/CardList';
+import { describe, beforeEach, vi, afterEach, it, expect } from 'vitest';
+
+vi.mock('next/compat/router', () => ({
+  useRouter() {
+    return {
+      pathname: '',
+      push: () => {},
+      query: {},
+      events: {
+        on: () => {},
+        off: () => {},
+      },
+    };
+  },
+}));
 
 describe('Error Boundary', () => {
   const TrowError = () => {
@@ -25,11 +39,7 @@ describe('Error Boundary', () => {
   });
 
   it('Error Boundary', () => {
-    render(
-      <MemoryRouter>
-        <CardList items={[]} error={'Error'} isLoading={false}></CardList>
-      </MemoryRouter>
-    );
+    render(<CardList items={[]} error={'Error'} isLoading={false}></CardList>);
 
     expect(screen.getByText('Error')).toBeInTheDocument();
   });
