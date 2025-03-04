@@ -61,7 +61,7 @@ export const Main = (details: Main) => {
     newSearchParams.set('search', `${value}`);
     newSearchParams.set('page', `${currentPage}`);
     newSearchParams.set('checked', `${checkedUid}`);
-    router.replace(router.pathname + '?' + newSearchParams);
+    router.push(router.pathname + '?' + newSearchParams);
   }, [currentPage, value, checkedUid, search]);
 
   useEffect(() => {

@@ -1,12 +1,12 @@
 import styles from './SwitchButton.module.css';
-import { useTheme } from '../../../../../context/themeContext';
-import { Theme } from '../../../../models/constants/constants';
-import { useNavigate, useParams } from 'react-router';
+import { useTheme } from '../../context/themeContext';
+import { Theme } from '../../models/constants/constants';
+import { useRouter } from 'next/compat/router';
 
 export const SwitchButton = () => {
   const { theme, setTheme } = useTheme();
-  const { uid } = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { uid } = router.query;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
@@ -15,7 +15,7 @@ export const SwitchButton = () => {
       setTheme(Theme.Light);
     }
     if (uid) {
-      navigate(`/details/${uid}`);
+      router.push(router.asPath);
     }
   };
 

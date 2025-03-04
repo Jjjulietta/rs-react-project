@@ -34,7 +34,7 @@ export const Card = ({ item }: Card) => {
         <button
           onClick={() =>
             !router.query.uid &&
-            router.replace(`${location.search}&uid=${item.uid}`)
+            router.push(`${location.search}&uid=${item.uid}`)
           }
         >
           {' '}
