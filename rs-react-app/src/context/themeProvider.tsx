@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useMemo } from 'react';
 import { THEME, Theme } from '../models/constants/constants';
 import { defaultContext, ThemeContext } from './themeContext';

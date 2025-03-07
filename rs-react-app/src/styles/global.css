@@ -81,6 +81,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.layout {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--color-text);
