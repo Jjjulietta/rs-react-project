@@ -8,7 +8,9 @@ export const stringTransform = (value: string) => {
   return str;
 };
 
-export const convertToCSV = (objArray: (SeriesDetails | null)[]) => {
+export const convertToCSV = (
+  objArray: ({ uid: number; title: string } | null)[]
+) => {
   let csvString = '';
   if (objArray.length && objArray.every((item) => item !== null)) {
     const str = [

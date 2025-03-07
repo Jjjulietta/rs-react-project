@@ -1,5 +1,5 @@
 interface ButtonProps {
-  className: CSSModuleClasses[string];
+  className: string;
   type: 'submit' | 'reset' | 'button' | undefined;
   name: string;
   onClick?: () => void;

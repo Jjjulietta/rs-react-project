@@ -1,3 +1,4 @@
+'use client';
 import { useRef } from 'react';
 import styles from './Search.module.css';
 import { Button } from '../Button/Button';

@@ -1,12 +1,15 @@
+'use client';
+
 import styles from './SwitchButton.module.css';
 import { useTheme } from '../../context/themeContext';
 import { Theme } from '../../models/constants/constants';
 import { useRouter } from 'next/compat/router';
+import { useParams } from 'next/navigation';
 
 export const SwitchButton = () => {
   const { theme, setTheme } = useTheme();
   const router = useRouter();
-  const { uid } = router.query;
+  const { uid } = useParams();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
