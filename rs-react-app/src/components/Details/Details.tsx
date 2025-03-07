@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './Details.module.css';
 import {
   EpisodeDetails,
@@ -6,8 +8,7 @@ import {
 } from '../../models/types/api';
 import { getDetailsSeries, stringTransform } from '../../utils/helpers';
 import { Button } from '../Button/Button';
-import { useRouter } from 'next/compat/router';
-import { useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface Details {
   details: SeasonType;
@@ -16,11 +17,12 @@ interface Details {
 export const Details = (details: Details) => {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   const handleClick = () => {
     const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.delete('uid');
-    router.replace(router.pathname + '?' + newSearchParams);
+    router.push(pathname + '?' + newSearchParams);
   };
 
   const template = (obj: SeriesDetails | EpisodeDetails) => {
@@ -53,10 +55,7 @@ export const Details = (details: Details) => {
           <div>
             <h2 className={styles.title}>{details.details.season?.title}</h2>
             <h3>series</h3>
-            <div>
-              {details.details.season.uid &&
-                template(getDetailsSeries(details.details).series)}
-            </div>
+            <div>{template(getDetailsSeries(details.details).series)}</div>
           </div>
         )}
       </>
