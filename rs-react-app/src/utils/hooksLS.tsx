@@ -4,7 +4,7 @@ export const useLocalStorage = (
   key: string,
   val?: string
 ): readonly [string, React.Dispatch<React.SetStateAction<string>>] => {
-  const [value, setValue] = useState(val);
+  const [value, setValue] = useState(val || '');
   const [isInitialized, setIsInitialized] = useState(false);
   // const [value, setValue] = useState(localStorage.getItem(key) || val || '');
 
@@ -16,7 +16,7 @@ export const useLocalStorage = (
     }
     setIsInitialized(true);
     // localStorage.setItem(key, value);
-  }, [key]);
+  }, []);
 
   useEffect(() => {
     if (isInitialized) {
