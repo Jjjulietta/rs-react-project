@@ -1,14 +1,14 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SeasonDetails } from '../models/types/api';
+import { Seasons } from '../models/types/api';
 import { RootState } from './store';
 
-const initialState: SeasonDetails[] = [];
+const initialState: Seasons[] = [];
 
 const detailsSlice = createSlice({
   name: 'details',
   initialState,
   reducers: {
-    detailsAdded(state, action: PayloadAction<SeasonDetails>) {
+    detailsAdded(state, action: PayloadAction<Seasons>) {
       const details = action.payload;
       state.push(details);
     },
