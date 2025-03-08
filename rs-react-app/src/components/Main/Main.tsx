@@ -32,7 +32,6 @@ export const Main = () => {
     const newSearchParams = new URLSearchParams();
     newSearchParams.set('search', `${value}`);
     newSearchParams.set('page', `${currentPage}`);
-    console.log(pathname);
     router.push(pathname + '?' + newSearchParams);
   }, [value, currentPage]);
 

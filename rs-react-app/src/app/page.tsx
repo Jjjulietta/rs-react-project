@@ -1,12 +1,8 @@
-// import { Suspense } from 'react';
 import { CardListTemplate } from 'src/components/CardList/CardListTemplate';
 import DetailsPage from 'src/components/Details/DetailsPage';
-// import Loader from 'src/components/Loader/Loader';
 import { Main } from 'src/components/Main/Main';
 import { BASE_URL, URLS, PAGE_SIZE } from 'src/models/constants/constants';
 import { AllSeasonSearch } from 'src/models/types/api';
-
-// export const dynamic = 'force-dynamic';
 
 interface SearchCards {
   page: number;
@@ -18,11 +14,6 @@ const getCards = async ({ page, search }: SearchCards) => {
   url.searchParams.set('pageNumber', `${page}`);
   url.searchParams.set('pageSize', `${PAGE_SIZE}`);
   url.searchParams.set('title', `${search}`);
-  // const request = new Request(`${BASE_URL}${URLS.PAGINATION}`, {
-  //   method: 'GET',
-  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //   : `{ pageNumber: ${pageNumber}, pageSize: ${PAGE_SIZE}, title: ${title} }`,
-  // });
   const response = await fetch(url.href);
   if (!response.ok) {
     throw new Error(response.statusText);
@@ -36,11 +27,6 @@ const getSearchCards = async ({ page, search }: SearchCards) => {
   url.searchParams.set('pageNumber', `${page}`);
   url.searchParams.set('pageSize', `${PAGE_SIZE}`);
   url.searchParams.set('title', `${search}`);
-  // const request = new Request(`${BASE_URL}${URLS.PAGINATION}`, {
-  //   method: 'GET',
-  //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //   : `{ pageNumber: ${pageNumber}, pageSize: ${PAGE_SIZE}, title: ${title} }`,
-  // });
   const response = await fetch(url.href, { method: 'POST' });
   if (!response.ok) {
     throw new Error(response.statusText);
@@ -54,7 +40,6 @@ export default async function CardList({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  console.log(await searchParams);
   let cards: AllSeasonSearch;
   const { search, page, uid } = await searchParams;
 
@@ -70,13 +55,11 @@ export default async function CardList({
   ) {
     cards = await getSearchCards({ page: +page - 1, search: search });
   }
-  console.log(cards);
   return (
     <section className={uid ? 'layout' : ''}>
       <Main />
       <div>
         <h2>Star Trek Seasons - Results</h2>
-
         <CardListTemplate cards={cards} />
       </div>
       {uid && typeof uid === 'string' && <DetailsPage uid={uid} />}
