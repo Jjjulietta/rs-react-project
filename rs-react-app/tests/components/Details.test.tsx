@@ -1,8 +1,20 @@
 import { waitFor } from '@testing-library/react';
 import { Details } from '../../src/components/Details/Details';
 import { renderWithProviders } from '../../src/utils/test-utils';
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { seasonApi } from 'tests/mocksData/mocks';
+
+vi.mock('next/navigation', () => ({
+  __esModule: true,
+  usePathname: () => ({ pathname: '' }),
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+  useSearchParams: () => ({ get: () => {} }),
+  useServerInsertedHTML: vi.fn(),
+}));
 
 describe('Details', () => {
   it('should render card items', async () => {

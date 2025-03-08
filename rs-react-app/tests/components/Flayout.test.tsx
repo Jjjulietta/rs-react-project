@@ -4,7 +4,7 @@ import * as hook from '../../src/store/detailsSlice';
 import * as hooks from '../../src/store/checkedSlice';
 import * as funk from '../../src/utils/helpers';
 import { vi, describe, afterEach, it, expect } from 'vitest';
-import { details } from 'tests/mocksData/mocks';
+import { cardSeasons, details } from 'tests/mocksData/mocks';
 import { Flayout } from 'src/components/Flayout/Flayout';
 
 vi.mock('../../src/store/detailsSlice');
@@ -30,10 +30,10 @@ describe('Flayout', () => {
     vi.clearAllMocks();
   });
   it('should', async () => {
-    vi.spyOn(hook, 'selectAllDetails').mockReturnValue([details]);
+    vi.spyOn(hook, 'selectAllDetails').mockReturnValue([cardSeasons]);
     vi.spyOn(hooks, 'selectCheckedNumber').mockReturnValue(2);
     vi.spyOn(hook, 'detailsAdded').mockReturnValue({
-      payload: details,
+      payload: cardSeasons,
       type: 'details/detailsAdded',
     });
     const convertTo = vi.spyOn(funk, 'convertToCSV').mockReturnValue('');

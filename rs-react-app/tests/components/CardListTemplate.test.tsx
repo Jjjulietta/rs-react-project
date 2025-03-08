@@ -1,31 +1,26 @@
-import { waitFor } from '@testing-library/react';
-import { CardList } from '../../src/components/CardList/CardList';
 import { renderWithProviders } from '../../src/utils/test-utils';
-import { cardsSeasons, details, seasonApi } from '../mocksData/mocks';
+import { cardsSeasons } from '../mocksData/mocks';
 import { describe, it, expect, vi } from 'vitest';
-import { Main } from 'src/components/Main/Main';
 import { cards } from 'src/mocks/mocks';
+import { CardListTemplate } from 'src/components/CardList/CardListTemplate';
+import { waitFor } from '@testing-library/react';
 
-const mockOn = vi.fn();
-const mockReplase = vi.fn();
-vi.mock('next/compat/router', () => ({
-  useRouter() {
-    return {
-      pathname: '',
-      push: mockReplase,
-      query: {},
-      events: {
-        on: mockOn,
-        off: () => {},
-      },
-    };
-  },
+vi.mock('next/navigation', () => ({
+  __esModule: true,
+  usePathname: () => ({ pathname: '' }),
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+  useSearchParams: () => ({ get: () => {} }),
+  useServerInsertedHTML: vi.fn(),
 }));
 
 describe('CardList', () => {
   it('should render cards ', async () => {
     const { getByText } = renderWithProviders(
-      <Main details={details} cards={cards} detailsPage={seasonApi} />
+      <CardListTemplate cards={cards} />
     );
 
     await waitFor(() => expect(getByText('Title1')).toBeInTheDocument());
@@ -34,7 +29,7 @@ describe('CardList', () => {
 
   it('should each card have a link', () => {
     const { getByRole, getAllByRole } = renderWithProviders(
-      <CardList items={cardsSeasons} error={undefined} isLoading={false} />
+      <CardListTemplate cards={cards} />
     );
 
     cardsSeasons.forEach((card) => {
@@ -43,6 +38,6 @@ describe('CardList', () => {
     });
 
     const cardsList = getAllByRole('button');
-    expect(cardsList).toHaveLength(2);
+    expect(cardsList).toHaveLength(5);
   });
 });

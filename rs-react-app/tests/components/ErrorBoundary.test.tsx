@@ -1,20 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import ErrorBoundary from '../../src/components/ErrorBoundary/ErrorBoundary';
-import { CardList } from '../../src/components/CardList/CardList';
 import { describe, beforeEach, vi, afterEach, it, expect } from 'vitest';
 
-vi.mock('next/compat/router', () => ({
-  useRouter() {
-    return {
-      pathname: '',
-      push: () => {},
-      query: {},
-      events: {
-        on: () => {},
-        off: () => {},
-      },
-    };
-  },
+vi.mock('next/navigation', () => ({
+  usePathname: () => ({ pathname: '' }),
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+  useParams: () => ({ uid: '1' }),
+  useSearchParams: () => ({ get: () => {} }),
+  useServerInsertedHTML: vi.fn(),
 }));
 
 describe('Error Boundary', () => {
@@ -36,11 +33,5 @@ describe('Error Boundary', () => {
     );
 
     expect(screen.getByText('Error: Test')).toBeInTheDocument();
-  });
-
-  it('Error Boundary', () => {
-    render(<CardList items={[]} error={'Error'} isLoading={false}></CardList>);
-
-    expect(screen.getByText('Error')).toBeInTheDocument();
   });
 });

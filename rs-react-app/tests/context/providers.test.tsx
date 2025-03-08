@@ -1,9 +1,9 @@
-import { ThemeContextProvider } from '../../src/context/themeProvider';
 import { renderWithProviders } from '../../src/utils/test-utils';
 import { fireEvent, renderHook } from '@testing-library/react';
 import { useTheme } from '../../src/context/themeContext';
 import { describe, it, expect, vi } from 'vitest';
 import { SwitchButton } from 'src/components/SwitchButton/SwitchButton';
+import Providers from 'src/context/providers';
 
 vi.mock('next/navigation', () => ({
   usePathname: () => ({ pathname: '' }),
@@ -17,12 +17,12 @@ vi.mock('next/navigation', () => ({
   useServerInsertedHTML: vi.fn(),
 }));
 
-describe('Context', () => {
+describe('providers', () => {
   it('should', () => {
     const { getByRole } = renderWithProviders(
-      <ThemeContextProvider>
+      <Providers>
         <SwitchButton />
-      </ThemeContextProvider>
+      </Providers>
     );
     const input = getByRole('checkbox');
     const { result } = renderHook(() => useTheme());

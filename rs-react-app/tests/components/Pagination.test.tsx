@@ -9,17 +9,11 @@ describe('Pagination', () => {
     vi.clearAllMocks();
   });
   it('Pagination', () => {
-    const setPage = vi.fn();
-    renderWithProviders(
-      <Pagination setPage={setPage} currentPage={1} totalPage={3}></Pagination>
-    );
+    renderWithProviders(<Pagination totalPage={3}></Pagination>);
     expect(screen.getByRole('button', { name: '>' })).toBeInTheDocument();
   });
   it('should display arrow buttons and number of pages', async () => {
-    const setPage = vi.fn();
-    renderWithProviders(
-      <Pagination setPage={setPage} currentPage={1} totalPage={3} />
-    );
+    renderWithProviders(<Pagination totalPage={3} />);
     const arrowBtnRight = screen.getByRole('button', { name: '>' });
     const arrowBtnLeft = screen.getByRole('button', { name: '<' });
 

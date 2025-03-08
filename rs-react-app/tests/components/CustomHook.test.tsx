@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 import { useLocalStorage } from '../../src/utils/hooksLS.jsx';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 describe('useLocalStorage', () => {
   const mockSetItem = vi.spyOn(Storage.prototype, 'setItem');

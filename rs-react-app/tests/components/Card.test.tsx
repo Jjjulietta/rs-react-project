@@ -10,19 +10,19 @@ import { vi, describe, afterEach, it, expect } from 'vitest';
 
 vi.mock('../../src/store/detailsSlice');
 vi.mock('../../src/store/checkedSlic');
-vi.mock('next/compat/router');
-vi.mock('next/compat/router', () => ({
-  useRouter() {
-    return {
-      pathname: '',
-      push: () => {},
-      query: {},
-      events: {
-        on: () => {},
-        off: () => {},
-      },
-    };
-  },
+vi.mock('next/navigation');
+vi.mock('next/navigation', () => ({
+  useSearchParams: vi.fn(),
+}));
+vi.mock('next/navigation', () => ({
+  usePathname: () => ({ pathname: '' }),
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+  useSearchParams: () => ({ get: () => {} }),
+  useServerInsertedHTML: vi.fn(),
 }));
 
 describe('Card', () => {
@@ -31,6 +31,7 @@ describe('Card', () => {
   });
   it('should', () => {
     const { getByText } = renderWithProviders(<Card item={cardSeasons} />);
+
     expect(getByText('Title1')).toBeInTheDocument();
     expect(getByText('series1')).toBeInTheDocument();
     expect(getByText('2')).toBeInTheDocument();
@@ -46,9 +47,6 @@ describe('Card', () => {
     userEvent.setup();
     await userEvent.click(getByRole('button'));
     expect(getByRole('button')).toBeInTheDocument();
-    // await waitFor(() =>
-    //   expect(window.location.pathname).toEqual('/details/:1/')
-    // );
   });
   it('should navigate to details', async () => {
     const { getByText } = renderWithProviders(<Card item={cardSeasons} />);
@@ -66,6 +64,10 @@ describe('Card', () => {
     vi.spyOn(hooks, 'cardRemoved').mockReturnValue({
       payload: '1',
       type: 'checked/cardRemoved',
+    });
+    vi.spyOn(hook, 'detailsAdded').mockReturnValue({
+      payload: cardSeasons,
+      type: 'details/detailsAdded',
     });
     vi.spyOn(hook, 'detailsRemoved').mockReturnValue({
       payload: '1',

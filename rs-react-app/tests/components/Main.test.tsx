@@ -1,32 +1,32 @@
 import { Main } from '../../src/components/Main/Main';
 import { renderWithProviders } from '../../src/utils/test-utils';
 import { describe, it, expect, vi } from 'vitest';
-import { details, seasonApi } from 'tests/mocksData/mocks';
-import { cards } from 'src/mocks/mocks';
 
-vi.mock('next/compat/router');
-const mockOn = vi.fn();
-const mockReplase = vi.fn();
+vi.mock('next/navigation', () => ({
+  usePathname: () => ({ pathname: '' }),
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+  }),
+  useParams: () => ({ uid: '1' }),
+  useSearchParams: () => ({ get: () => {} }),
+  useServerInsertedHTML: vi.fn(),
+}));
+
 describe('Main', () => {
-  vi.mock('next/compat/router', () => ({
-    useRouter() {
-      return {
-        pathname: '',
-        query: { uid: '1' },
-        push: () => {},
-        replase: mockReplase,
-        events: {
-          on: mockOn,
-          off: () => {},
-        },
-      };
-    },
-  }));
+  it('should render switch button', async () => {
+    const { getByText, getByRole } = renderWithProviders(<Main />);
+    expect(getByText('Light')).toBeInTheDocument();
+    expect(getByText('Dark')).toBeInTheDocument();
+    expect(getByRole('checkbox')).toBeInTheDocument();
+  });
+  it('should render Search component', () => {
+    const { getByRole } = renderWithProviders(<Main />);
 
-  it('should render cards', async () => {
-    const { getAllByText } = renderWithProviders(
-      <Main details={details} cards={cards} detailsPage={seasonApi} />
-    );
-    expect(getAllByText('Title1')).toBeDefined();
+    const input = getByRole('searchbox');
+    const button = getByRole('button', { name: 'submit' });
+    expect(input).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
   });
 });
