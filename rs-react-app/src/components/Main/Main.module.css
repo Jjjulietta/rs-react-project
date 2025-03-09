@@ -1,16 +1,8 @@
-/* .layout {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-} */
-
 .search {
   width: 100%;
 }
 
 .search_details {
-  width: 50%;
   padding: 1rem 2rem;
   background-color: rgba(100, 50, 200, 0.1);
 }

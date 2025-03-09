@@ -56,13 +56,15 @@ export default async function CardList({
     cards = await getSearchCards({ page: +page - 1, search: search });
   }
   return (
-    <section className={uid ? 'layout' : ''}>
+    <section>
       <Main />
-      <div>
-        <h2>Star Trek Seasons - Results</h2>
-        <CardListTemplate cards={cards} />
+      <div className={uid ? 'layout' : ''}>
+        <div>
+          <h2>Star Trek Seasons - Results</h2>
+          <CardListTemplate cards={cards} />
+        </div>
+        {uid && typeof uid === 'string' && <DetailsPage uid={uid} />}
       </div>
-      {uid && typeof uid === 'string' && <DetailsPage uid={uid} />}
     </section>
   );
 }
