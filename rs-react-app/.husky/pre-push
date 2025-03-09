@@ -1,0 +1,4 @@
+# rs-react-app/.husky/pre-commit
+cd rs-react-app
+
+npm run coverage
