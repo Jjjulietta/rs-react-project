@@ -3,13 +3,13 @@
 import styles from './SwitchButton.module.css';
 import { useTheme } from '../../context/themeContext';
 import { Theme } from '../../models/constants/constants';
-import { useRouter } from 'next/compat/router';
-import { useParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export const SwitchButton = () => {
   const { theme, setTheme } = useTheme();
   const router = useRouter();
-  const { uid } = useParams();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
@@ -17,8 +17,8 @@ export const SwitchButton = () => {
     } else {
       setTheme(Theme.Light);
     }
-    if (uid) {
-      router.push(router.asPath);
+    if (searchParams.get('uid')) {
+      router.push(pathname + '?' + searchParams);
     }
   };
 
