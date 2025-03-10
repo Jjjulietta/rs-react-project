@@ -1,0 +1,4 @@
+# rs-react-app-forms/.husky/pre-commit
+cd rs-react-app-forms
+
+npm run lint
