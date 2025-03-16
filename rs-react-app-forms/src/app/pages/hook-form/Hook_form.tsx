@@ -46,7 +46,7 @@ export const HookForm = () => {
     navigate('/');
   };
   return (
-    <div>
+    <div className="page">
       <h2 className="title">React hook form</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         {Object.entries(formFields).map((item, index) => {

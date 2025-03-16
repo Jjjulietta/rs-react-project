@@ -98,7 +98,7 @@ export const Form = () => {
     }
   };
   return (
-    <div>
+    <div className="page">
       <h2 className="title">Uncontrolled form</h2>
       <form id="form" onSubmit={handleSubmit} className="form" noValidate>
         {fields.map((item, index) => (
