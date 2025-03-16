@@ -1,0 +1,42 @@
+.template {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px 3px rgba(100, 100, 100, 0.4);
+  margin-bottom: 1rem;
+}
+
+.template_active {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px 3px rgba(100, 100, 100, 0.4);
+  margin-bottom: 1rem;
+  animation-name: animation;
+  animation-duration: 10s;
+  animation-iteration-count: 3;
+}
+
+@keyframes animation {
+  0% {
+    box-shadow: 2px 4px 5px 3px red;
+  }
+  25% {
+    box-shadow: 2px 4px 5px 3px yellow;
+  }
+  50% {
+    box-shadow: 2px 4px 5px 3px blue;
+  }
+  100% {
+    box-shadow: 2px 4px 5px 3px green;
+  }
+}
+
+.itemContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

@@ -1,0 +1,13 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
