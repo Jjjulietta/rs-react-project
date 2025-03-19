@@ -1,0 +1,13 @@
+.card {
+  background-color: rgba(100, 100, 200, 0.1);
+}
+
+.card_item {
+  padding: 5px;
+}
+
+.active {
+  color: rgb(233, 40, 240);
+  text-decoration: underline;
+  text-shadow: 3px 3px 5px rgb(9, 190, 235);
+}
