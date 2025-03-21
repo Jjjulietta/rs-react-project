@@ -1,25 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Search } from '../shared/components/search/Search';
 import { Filters } from '../shared/components/filters/Filters';
 import { CardListTemplate } from '../shared/components/cardList/CardList';
 import { Country } from '../models/types';
-import {
-  filteredByRegions,
-  getRegionsList,
-  orderBy,
-  searchedCountry,
-} from '../shared/utils/helpers';
 import { Sort } from '../shared/components/sort/Sort';
 import { getCountryes } from '../services/api';
+import { getRegionsList } from '../shared/utils/helpers';
 
 export const Main = () => {
-  const [, setValue] = useState<string | null | undefined>(null);
-  const [order, setOrder] = useState<string | null | undefined>(null);
-  const [orderField, setOrderField] = useState<string | null | undefined>(null);
+  const [value, setValue] = useState<string>('');
+  const [order, setOrder] = useState<string | undefined>();
+  const [orderField, setOrderField] = useState<string | undefined>();
   const [countries, setCountries] = useState<Country[] | []>([]);
-  const [countriesResult, setCountriesResult] = useState<Country[] | []>([]);
   const [regions, setRegions] = useState<string[] | []>([]);
-  const [region, setRegion] = useState<string | null>(null);
+  const [region, setRegion] = useState<string>('all');
 
   useEffect(() => {
     getCountryes().then((data) => {
@@ -28,56 +22,40 @@ export const Main = () => {
         return val;
       });
       setCountries(countries);
-      setCountriesResult(countries);
       const regionsList = getRegionsList(countries);
       setRegions(regionsList);
     });
   }, []);
 
-  const searchValue = (val: string) => {
+  const searchValue = useCallback((val: string) => {
     setValue(val);
-    const country = searchedCountry(val, countries);
-    setCountriesResult(country);
-  };
-  const selectRegion = (value: string) => {
+  }, []);
+
+  const selectRegion = useCallback((value: string) => {
+    setValue('');
     setRegion(value);
-    if (order && orderField) {
-      const sortedCountries = orderBy(order, orderField, countries);
-      const filtered = filteredByRegions(value, sortedCountries);
-      setCountriesResult(filtered);
-    } else {
-      const filtered = filteredByRegions(value, countries);
+  }, []);
 
-      setCountriesResult(filtered || []);
-    }
-  };
-
-  const selectOrder = (
-    order: string | null | undefined,
-    field: string | null | undefined
-  ) => {
-    setOrder(order);
-    setOrderField(field);
-    if (order && field) {
-      const sortedCountries = orderBy(order, field, countriesResult);
-      setCountriesResult(sortedCountries);
-    } else if (
-      ((!order && !field) || (order && !field) || (!order && field)) &&
-      region
-    ) {
-      const filtered = filteredByRegions(region, countries);
-      setCountriesResult(filtered || []);
-    } else {
-      setCountriesResult(countries);
-    }
-  };
+  const selectOrder = useCallback(
+    (order: string | undefined, field: string | undefined) => {
+      setOrder(order);
+      setOrderField(field);
+    },
+    []
+  );
 
   return (
     <div>
       <Search onSearch={searchValue} />
       <Filters regions={regions} setRegion={selectRegion} />
       <Sort setOrder={selectOrder} />
-      <CardListTemplate list={countriesResult} />
+      <CardListTemplate
+        list={countries}
+        searchValue={value}
+        region={region}
+        order={order}
+        orderField={orderField}
+      />
     </div>
   );
 };
