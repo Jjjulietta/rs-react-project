@@ -11,60 +11,42 @@ Currently, two official plugins are available:
 
 - before use react memo, useMemo and useCallback:
 
-  | num | user interact | render dur | commit dur | causes     | component max dur | why rendered  |
-  | --- | ------------- | ---------- | ---------- | ---------- | ----------------- | ------------- |
-  | 1   | first render  | 23.6ms     | 0.1s       | createRoot | Main/App          | first timeren |
-
-  | 2 | first render | 104.9ms | 3.3s | Main | CardListTemplate | props changed |
-
-  | 3 | first render | 66.6ms | 3.4s | Main | CardListTemplate | props changed |
-
-  | 4 - 9 | search country | 0.5-0.7ms | 22-24.9s | Search | Search |
-
-  | 10 | submit search | 2.1ms | 26.7s | Search,Main | CardListTemplate | props changed |
-
-  | 5 | select region | 28.2ms | 3.4s | Filters,Main | Sort | props changed |
-
-  | 6 | select field | 20.3ms | 4.2s | Sort, Main | Card | parent comp |
-
-  | 7 | select order | 14.4ms | 6s | Sort, Main | CardListTemplate | props changed |
-
-  | 8 | change order | 17.3ms | 7.9s | Sort, Main | CardListTemplate | props changed |
-
-  | 9 | reset sorting | 15.2ms | 11.4s | Sort, Main | Card | parent comp |
+  | num   | user interact  | render dur | commit dur | causes       | component max dur | why rendered  |
+  | ----- | -------------- | ---------- | ---------- | ------------ | ----------------- | ------------- |
+  | 1     | first render   | 23.6ms     | 0.1s       | createRoot   | Main/App          | first timeren |
+  | 2     | first render   | 104.9ms    | 3.3s       | Main         | CardListTemplate  | props changed |
+  | 3     | first render   | 66.6ms     | 3.4s       | Main         | CardListTemplate  | props changed |
+  | 4 - 9 | search country | 0.5-0.7ms  | 22-24.9s   | Search       | Search            |
+  | 10    | submit search  | 2.1ms      | 26.7s      | Search,Main  | CardListTemplate  | props changed |
+  | 5     | select region  | 28.2ms     | 3.4s       | Filters,Main | Sort              | props changed |
+  | 6     | select field   | 20.3ms     | 4.2s       | Sort, Main   | Card              | parent comp   |
+  | 7     | select order   | 14.4ms     | 6s         | Sort, Main   | CardListTemplate  | props changed |
+  | 8     | change order   | 17.3ms     | 7.9s       | Sort, Main   | CardListTemplate  | props changed |
+  | 9     | reset sorting  | 15.2ms     | 11.4s      | Sort, Main   | Card              | parent comp   |
 
   - after use react memo, useMemo and useCallback:
 
-  | num | user interact | render dur | commit dur | causes     | component max dur | why rendered   |
-  | --- | ------------- | ---------- | ---------- | ---------- | ----------------- | -------------- |
-  | 1   | firs render   | 33.7ms     | 0.1s       | createRoot | CardListTemplate  | first time ren |
-
-  | 2 | firs render | 107.8ms | 0.9s | Main | CardListTemplate | props changed |
-
-  | 3 | firs render | 59.3ms | 1s | Main | CardListTemplate | props changed |
-
-  | 4 - 9 | search country | 0.5-0.8ms | 3.9 -5.1s | Search | Search |
-
-  | 10 | submit search | 6ms | 6.9s | Search,Main | CardListTemplate | props changed |
-
-  | 5 | select region | 30.1ms | 3.1s | Filters,Main | CardListTemplate | props changed |
-
-  | 6 | select field | 6.9ms | 3.1s | Sort, Main | CardListTemplate | props changed |
-
-  | 7 | select order | 3.4ms | 4.5s | Sort, Main | CardListTemplate | props changed |
-
-  | 8 | change order | 3.2ms | 5.8s | Sort, Main | CardListTemplate | props changed |
-
-  | 9 | reset sorting | 2.9ms | 7.2s | Sort, Main | CardListTemplate | props changed |
+  | num   | user interact  | render dur | commit dur | causes       | component max dur | why rendered   |
+  | ----- | -------------- | ---------- | ---------- | ------------ | ----------------- | -------------- |
+  | 1     | firs render    | 33.7ms     | 0.1s       | createRoot   | CardListTemplate  | first time ren |
+  | 2     | firs render    | 107.8ms    | 0.9s       | Main         | CardListTemplate  | props changed  |
+  | 3     | firs render    | 59.3ms     | 1s         | Main         | CardListTemplate  | props changed  |
+  | 4 - 9 | search country | 0.5-0.8ms  | 3.9 -5.1s  | Search       | Search            |
+  | 10    | submit search  | 6ms        | 6.9s       | Search,Main  | CardListTemplate  | props changed  |
+  | 5     | select region  | 30.1ms     | 3.1s       | Filters,Main | CardListTemplate  | props changed  |
+  | 6     | select field   | 6.9ms      | 3.1s       | Sort, Main   | CardListTemplate  | props changed  |
+  | 7     | select order   | 3.4ms      | 4.5s       | Sort, Main   | CardListTemplate  | props changed  |
+  | 8     | change order   | 3.2ms      | 5.8s       | Sort, Main   | CardListTemplate  | props changed  |
+  | 9     | reset sorting  | 2.9ms      | 7.2s       | Sort, Main   | CardListTemplate  | props changed  |
 
 ## List of images:
 
 - before use react memo, useMemo and useCallback:
 
   - flame
-    1 ![first render][1] , [1]:./src/assets/screenchots/Screenshot (978).png 'Flame 1'
-    2 ![first render][2] , [2]:Screenshot (979).png 'Flame 2'
-    3 ![first render][3] , [3]:Screenshot (980).png 'Flame 3'
+    1 ![first render][1] , [1]:(src/assets/screenchots/Screenshot (978).png) 'Flame 1'
+    2 ![first render][2] , [2]:/src/assets/screenchots/Screenshot (979).png 'Flame 2'
+    3 ![first render][3] , [3]:src/assets/screenchots/Screenshot (980).png 'Flame 3'
     4 ![search][4] , [4]:Screenshot (981).png 'Flame 4'
     5 ![search][5] , [5]:Screenshot (982).png 'Flame 5'
     6 ![search][6] , [6]:Screenshot (986).png 'Flame 6'
