@@ -32,10 +32,14 @@ export const filteredByRegions = (value: string, countries: Country[]) => {
   if (value === 'all') {
     return countries;
   }
-  return countries.filter((country) => country.region === value);
+  const filter = countries.filter((country) => country.region === value);
+  return filter;
 };
 
-export const searchedCountry = (search: string, countries: Country[]) => {
+export const searchedCountry = (
+  search: string | undefined,
+  countries: Country[]
+) => {
   if (search) {
     return countries.filter(({ name }) =>
       name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
