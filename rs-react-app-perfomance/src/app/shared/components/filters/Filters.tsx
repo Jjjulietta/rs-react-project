@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, memo, useCallback, useState } from 'react';
 import styles from './filters.module.css';
 
 export interface FiltersProps {
@@ -6,13 +6,16 @@ export interface FiltersProps {
   setRegion: (val: string) => void;
 }
 
-export const Filters = ({ regions, setRegion }: FiltersProps) => {
+export const Filters = memo(({ regions, setRegion }: FiltersProps) => {
   const [selectedValue, setSelectedValue] = useState('region');
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value);
-    setSelectedValue(e.target.value);
-    setRegion(e.target.value);
-  };
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      console.log(e.target.value);
+      setSelectedValue(e.target.value);
+      setRegion(e.target.value);
+    },
+    [setRegion]
+  );
   return (
     <div className={styles.filter}>
       <label htmlFor="select" className={styles.label}>
@@ -32,4 +35,6 @@ export const Filters = ({ regions, setRegion }: FiltersProps) => {
       </select>
     </div>
   );
-};
+});
+
+Filters.displayName = 'Filters';

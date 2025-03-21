@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { Country } from '../../../models/types';
 import styles from './card.module.css';
 
@@ -5,7 +6,7 @@ interface Card {
   card: Country;
 }
 
-export const Card = (card: Card) => {
+export const Card = memo((card: Card) => {
   const { name, population, region, flag } = card.card;
   return (
     <tr className={styles.card}>
@@ -23,4 +24,6 @@ export const Card = (card: Card) => {
       </td>
     </tr>
   );
-};
+});
+
+Card.displayName = 'Card';

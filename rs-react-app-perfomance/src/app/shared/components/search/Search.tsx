@@ -1,29 +1,28 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, memo, useCallback, useState } from 'react';
 import styles from './search.module.css';
 
 interface PropsState {
   onSearch: (val: string) => void;
 }
 
-export const Search = ({ onSearch }: PropsState) => {
-  const [value, setValue] = useState<string | undefined>();
+export const Search = memo(({ onSearch }: PropsState) => {
+  const [value, setValue] = useState<string>('');
 
-  const onSubmit = () => {
-    if (value) {
-      const str = value.trim();
-      onSearch(str);
-    } else {
-      onSearch('');
-    }
-    setValue('');
-  };
+  const onSubmit = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault();
+      onSearch(value?.trim());
+      setValue('');
+    },
+    [onSearch, value]
+  );
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
   return (
-    <div className={styles.form}>
+    <form className={styles.form} onSubmit={onSubmit}>
       <label className={styles.label}>search by country name</label>
       <input
         type="search"
@@ -32,9 +31,11 @@ export const Search = ({ onSearch }: PropsState) => {
         onChange={handleChange}
         value={value}
       />
-      <button type="submit" onClick={onSubmit} className={styles.btn}>
+      <button type="submit" className={styles.btn}>
         submit
       </button>
-    </div>
+    </form>
   );
-};
+});
+
+Search.displayName = 'Search';
