@@ -47,11 +47,11 @@ Currently, two official plugins are available:
     1 ![first render][1] , [1]: (./src/assets/screenchots/Screenshot (978).png) "Flame 1"
     2 ![first render][2] , [2]: ./src/assets/screenchots/Screenshot (979).png "Flame 2"
     3 ![first render][3] , [3]: /src/assets/screenchots/Screenshot (980).png 'Flame 3'
-    4 ![search][4] , [4]: https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/Screenshot%20(981).png 'Flame 4'
+    4 [search][4] , [4]: https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/Screenshot%20(981).png 'Flame 4'
     1 ![first render](./src/assets/screenchots/Screenshot (978).png)
     2 ![first render](./src/assets/screenchots/Screenshot (979).png)
     3 ![first render](src/assets/screenchots/Screenshot (980).png)
-    4 ![search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/Screenshot%20(981).png>)
+    4 ![search]<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/Screenshot%20(981).png>
     5 ![search][5] , [5]:Screenshot (982).png 'Flame 5'
     6 ![search][6] , [6]:Screenshot (986).png 'Flame 6'
     7 ![search submit][7] , [7]:Screenshot (988).png 'Flame 7'
