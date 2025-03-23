@@ -61,7 +61,6 @@ Currently, two official plugins are available:
     12. [reset sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1040).png>)
 
   - ranked links
-
     1. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(988).png>)
     2. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(989).png>)
     3. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(990).png>)
@@ -91,7 +90,6 @@ Currently, two official plugins are available:
     11. [reset sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1150).png>)
 
   - ranked links
-
     1. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1124).png>)
     2. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1126).png>)
     3. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1127).png>)
