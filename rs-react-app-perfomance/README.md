@@ -43,45 +43,64 @@ Currently, two official plugins are available:
 
 - before use react memo, useMemo and useCallback:
 
-  - flame
-    1 ![first render][1]
+  - flame links
 
-    [1]: (./src/assets/screenchots/Screenshot (978).png) "Flame 1"
+    1 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(978).png>)
+    2 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(979).png>)
+    3 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(980).png>)
+    4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(981).png>)
+    5 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(982).png>)
+    6 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(986).png)
+    7 [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(988).png)
+    8 [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1008).png)
+    9 [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1018).png)
+    10 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1028).png)
+    11 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1031).png)
+    12 [reset sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1040).png)
 
-    2 ![first render][2]
+  - ranked links
 
-    [2]: ./src/assets/screenchots/Screenshot (979).png "Flame 2"
+    1 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(988).png)
+    2 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(989).png)
+    3 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(990).png)
+    4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(991).png)
+    5 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(992).png)
+    6 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(993).png)
+    7 [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1002).png)
+    8 [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1006).png)
+    9 [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1021).png)
+    10 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1021).png)
+    11 [reset](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1041).png)
 
-    3 ![first render][3]
+- after use react memo, useMemo and useCallback:
 
-    [3]: /src/assets/screenchots/Screenshot (980).png 'Flame 3'
-    4 [search][4]
-    [4]:https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/Screenshot%20(981).png 'Flame 4'
-    1 ![first render](./src/assets/screenchots/Screenshot (978).png)
-    2 ![first render](./src/assets/screenchots/Screenshot (979).png)
-    3 ![first render](src/assets/screenchots/Screenshot (980).png)
-    4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/Screenshot%20(981).png>)
-    5 ![search][5] , [5]:Screenshot (982).png 'Flame 5'
-    6 ![search][6] , [6]:Screenshot (986).png 'Flame 6'
-    7 ![search submit][7] , [7]:Screenshot (988).png 'Flame 7'
-    8 ![select region][8] , [8]:Screenshot (1008).png 'Flame 8'
-    9 ![select field][9] , [9]:Screenshot (1018).png 'Flame 9'
-    10 ![select sort][10] , [10]:Screenshot (1028).png 'Flame 10'
-    11 ![select sort][11] , [11]:Screenshot (1031).png 'Flame 11'
-    12 ![reset sort][12] , [12]:Screenshot (1040).png 'Flame 12'
+- flame links
 
-  - ranked
-    1 ![first render][1r] , [1r]:Screenshot (988).png 'Ranked 1'
-    2 ![first render][2r] , [2r]:Screenshot (989).png 'Ranked 2'
-    3 ![first render][3r] , [3r]:Screenshot (990).png 'Ranked 3'
-    4 ![search][4r] , [4r]:Screenshot (991).png 'Ranked 4'
-    5 ![search][5r] , [5r]:Screenshot (992).png 'Ranked 5'
-    6 ![search][6r] , [6r]:Screenshot (993).png 'Ranked 6'
-    7 ![search submit][7r] , [7r]:Screenshot (1002).png 'Ranked 7'
-    8 ![select region][8r] , [8r]:Screenshot (1006).png 'Ranked 8'
-    9 ![select field][9r] , [9r]:Screenshot (1021).png 'Ranked 9'
-    10 ![select sort][10r] , [10r]:Screenshot (1021).png 'Ranked 10'
-    11 ![reset][11r] , [11r]:Screenshot (1041).png 'Ranked 11'
+  1 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1119).png>)
+  2 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1120).png>)
+  3 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1121).png>)
+  4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1122).png>)
+  5 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1123).png>)
+  6 [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1133).png)
+  7 [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1140).png)
+  8 [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1147).png)
+  9 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1148).png)
+  10 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1149).png)
+  11 [reset sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1150).png)
+
+- ranked links
+
+  1 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1124).png)
+  2 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1126).png)
+  3 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1127).png)
+  4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1128).png)
+  5 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1129).png)
+  6 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1131).png)
+  7 [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1132).png)
+  8 [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1138).png)
+  9 [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1143).png)
+  10 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1145).png)
+  11 [reset](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1146).png)
 
 ## Expanding the ESLint configuration
 
