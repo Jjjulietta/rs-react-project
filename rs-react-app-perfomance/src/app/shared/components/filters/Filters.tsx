@@ -10,7 +10,6 @@ export const Filters = memo(({ regions, setRegion }: FiltersProps) => {
   const [selectedValue, setSelectedValue] = useState('region');
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLSelectElement>) => {
-      console.log(e.target.value);
       setSelectedValue(e.target.value);
       setRegion(e.target.value);
     },

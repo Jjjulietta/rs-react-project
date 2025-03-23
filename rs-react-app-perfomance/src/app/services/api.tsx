@@ -9,7 +9,6 @@ export const getCountryes = async () => {
     throw new Error(response.statusText);
   }
   const data: Promise<CountryApi[]> = await response.json();
-  console.log(data);
   return data;
 };
 
@@ -21,6 +20,5 @@ export const getCountryByRegion = async (region: string) => {
     throw new Error(response.statusText);
   }
   const data: Promise<Region[]> = await response.json();
-  console.log(data);
   return data;
 };

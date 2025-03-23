@@ -38,7 +38,6 @@ export const CardListTemplate = ({
     [filtered, order, orderField]
   );
   const countries = useMemo(() => {
-    console.log(searchValue);
     if (searchValue) {
       return searched;
     }
@@ -61,7 +60,6 @@ export const CardListTemplate = ({
               ))}
             </tr>
           </thead>
-          {/* <List list={countries} /> */}
           <tbody>
             {countries &&
               countries.map((value) => <Card card={value} key={value.flag} />)}
@@ -71,5 +69,3 @@ export const CardListTemplate = ({
     </>
   );
 };
-
-// CardListTemplate.displayName = 'CardListTemplate';
