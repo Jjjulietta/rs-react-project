@@ -44,10 +44,14 @@ Currently, two official plugins are available:
 - before use react memo, useMemo and useCallback:
 
   - flame
-    1 ![first render][1] , [1]: (./src/assets/screenchots/Screenshot (978).png) "Flame 1"
-    2 ![first render][2] , [2]: ./src/assets/screenchots/Screenshot (979).png "Flame 2"
-    3 ![first render][3] , [3]: /src/assets/screenchots/Screenshot (980).png 'Flame 3'
-    4 [search][4] , [4]: https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/Screenshot%20(981).png 'Flame 4'
+    1 ![first render][1]
+    [1]: (./src/assets/screenchots/Screenshot (978).png) "Flame 1"
+    2 ![first render][2]
+    [2]: ./src/assets/screenchots/Screenshot (979).png "Flame 2"
+    3 ![first render][3]
+    [3]: /src/assets/screenchots/Screenshot (980).png 'Flame 3'
+    4 [search][4]
+    [4]: https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/Screenshot%20(981).png 'Flame 4'
     1 ![first render](./src/assets/screenchots/Screenshot (978).png)
     2 ![first render](./src/assets/screenchots/Screenshot (979).png)
     3 ![first render](src/assets/screenchots/Screenshot (980).png)
