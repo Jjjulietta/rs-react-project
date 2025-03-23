@@ -1,0 +1,4 @@
+# rs-react-app-perfomance/.husky/pre-commit
+cd rs-react-app-perfomance
+
+npm run lint

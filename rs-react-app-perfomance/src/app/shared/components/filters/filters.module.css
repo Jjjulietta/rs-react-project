@@ -1,0 +1,37 @@
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-width: 120px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 16px;
+  background-color: rgba(100, 100, 100, 0.2);
+  margin-bottom: 20px;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 16px;
+  background-color: rgba(100, 100, 100, 0.2);
+}
+
+.option {
+  min-width: 120px;
+  padding: 20px;
+  border: none;
+  border-radius: 16px;
+  background-color: rgba(100, 100, 100, 0.2);
+}
+
+.label {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+}
