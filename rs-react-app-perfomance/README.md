@@ -1,4 +1,6 @@
-# React + TypeScript + Vite
+# React Performance
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -45,62 +47,62 @@ Currently, two official plugins are available:
 
   - flame links
 
-    1 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(978).png>)
-    2 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(979).png>)
-    3 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(980).png>)
-    4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(981).png>)
-    5 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(982).png>)
-    6 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(986).png)
-    7 [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(988).png)
-    8 [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1008).png)
-    9 [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1018).png)
-    10 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1028).png)
-    11 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1031).png)
-    12 [reset sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1040).png)
+    1. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(978).png>)
+    2. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(979).png>)
+    3. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(980).png>)
+    4. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(981).png>)
+    5. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(982).png>)
+    6. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(986).png>)
+    7. [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(988).png>)
+    8. [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1008).png>)
+    9. [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1018).png>)
+    10. [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1028).png>)
+    11. [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1031).png>)
+    12. [reset sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1040).png>)
 
   - ranked links
 
-    1 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(988).png)
-    2 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(989).png)
-    3 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(990).png)
-    4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(991).png)
-    5 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(992).png)
-    6 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(993).png)
-    7 [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1002).png)
-    8 [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1006).png)
-    9 [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1021).png)
-    10 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1021).png)
-    11 [reset](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1041).png)
+    1. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(988).png>)
+    2. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(989).png>)
+    3. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(990).png>)
+    4. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(991).png>)
+    5. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(992).png>)
+    6. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(993).png>)
+    7. [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1002).png>)
+    8. [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1006).png>)
+    9. [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1021).png>)
+    10. [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1021).png>)
+    11. [reset](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/before/Screenshot%20(1041).png>)
 
 - after use react memo, useMemo and useCallback:
 
-- flame links
+  - flame links
 
-  1 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1119).png>)
-  2 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1120).png>)
-  3 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1121).png>)
-  4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1122).png>)
-  5 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1123).png>)
-  6 [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1133).png)
-  7 [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1140).png)
-  8 [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1147).png)
-  9 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1148).png)
-  10 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1149).png)
-  11 [reset sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1150).png)
+    1. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1119).png>)
+    2. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1120).png>)
+    3. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1121).png>)
+    4. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1122).png>)
+    5. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1123).png>)
+    6. [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1133).png>)
+    7. [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1140).png>)
+    8. [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1147).png>)
+    9. [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1148).png>)
+    10. [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1149).png>)
+    11. [reset sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1150).png>)
 
-- ranked links
+  - ranked links
 
-  1 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1124).png)
-  2 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1126).png)
-  3 [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1127).png)
-  4 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1128).png)
-  5 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1129).png)
-  6 [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1131).png)
-  7 [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1132).png)
-  8 [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1138).png)
-  9 [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1143).png)
-  10 [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1145).png)
-  11 [reset](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1146).png)
+    1. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1124).png>)
+    2. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1126).png>)
+    3. [first render](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1127).png>)
+    4. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1128).png>)
+    5. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1129).png>)
+    6. [search](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1131).png>)
+    7. [search submit](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1132).png>)
+    8. [select region](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1138).png>)
+    9. [select field](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1143).png>)
+    10. [select sort](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1145).png>)
+    11. [reset](<https://github.com/Jjjulietta/rs-react-project/blob/performance/rs-react-app-perfomance/public/after/Screenshot%20(1146).png>)
 
 ## Expanding the ESLint configuration
 
